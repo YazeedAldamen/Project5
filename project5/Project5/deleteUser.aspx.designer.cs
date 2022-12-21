@@ -11,7 +11,7 @@ namespace Project5
 {
 
 
-    public partial class deleteUser
+    public partial class deleteUser1
     {
 
         /// <summary>

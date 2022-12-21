@@ -104,6 +104,7 @@ namespace Project5
             con.Open();
 
             com.ExecuteNonQuery();
+            Response.Redirect("Home.aspx");
         }
     }
 }

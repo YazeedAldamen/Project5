@@ -15,6 +15,7 @@
 </head>
 <body>
    <form id="form1" runat="server">
+
        <%
         string id = Request.QueryString["pid"];
         SqlConnection con = new SqlConnection("data source=DESKTOP-EJ4EJ89\\SQLEXPRESS ; database=MobileZone ; integrated security = SSPI");
@@ -25,7 +26,7 @@
 
 
         %>
-
+       
     <div class="container">
         <div class="single-product">
             <div class="row">
@@ -89,6 +90,7 @@
                         <div class="product-btn-group">
                             
                             <asp:Button CssClass="button add-cart" ID="Button1" runat="server" Text="Add to Cart" OnClick="Button1_Click" />
+                                   <button class="button add-cart"><a href="cart.aspx" style="text-decoration:none; color:black;">cart</a></button>
 
                         </div>
                     </div>

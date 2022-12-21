@@ -25,12 +25,14 @@
           <!-- /Breadcrumb -->
     
           <div class="row gutters-sm" id="vv"  runat="server">
-                                            <% 
-            SqlConnection con = new SqlConnection("data source=DESKTOP-EJ4EJ89\\SQLEXPRESS ; database=MobileZone ; integrated security = SSPI");
-            con.Open();
-            SqlCommand getUserCom = new SqlCommand($"select * from Users where id=2", con);
-            SqlDataReader sdr = getUserCom.ExecuteReader();
-            sdr.Read();
+                          <%
+                              int id = Convert.ToInt32(Session["userID"].ToString());
+                              //int id=int.Parse(Request.QueryString["pid"]);
+                              SqlConnection con = new SqlConnection("data source=DESKTOP-EJ4EJ89\\SQLEXPRESS ; database=MobileZone ; integrated security = SSPI");
+                              con.Open();
+                              SqlCommand getUserCom = new SqlCommand($"select * from Users where id={id}", con);
+                              SqlDataReader sdr = getUserCom.ExecuteReader();
+                              sdr.Read();
 
 
 
@@ -39,7 +41,7 @@
               <div class="card">
                 <div class="card-body">
                   <div class="d-flex flex-column align-items-center text-center">
-                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150"/>
+                    <img src="\images\avatar.jpg" alt="Admin" class="rounded-circle" width="150"/>
                     <div class="mt-3">
                       <h4><%=sdr[1].ToString().ToUpper() %> <%=sdr[2].ToString().ToUpper() %></h4>
                       <p class="text-secondary mb-1"><%=sdr[3].ToString() %></p>

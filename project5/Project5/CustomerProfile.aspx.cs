@@ -26,9 +26,11 @@ namespace Project5
         {
             editForm.Visible = true;
             vv.Visible = false;
+            int id = Convert.ToInt32(Session["userID"].ToString());
+
             SqlConnection con = new SqlConnection("data source=DESKTOP-EJ4EJ89\\SQLEXPRESS ; database=MobileZone ; integrated security = SSPI");
             con.Open();
-            SqlCommand getUserCom = new SqlCommand("select * from Users where id=2", con);
+            SqlCommand getUserCom = new SqlCommand($"select * from Users where id={id}", con);
             SqlDataReader sdr = getUserCom.ExecuteReader();
             sdr.Read();
             TextBox1.Text = sdr[1].ToString();
@@ -42,9 +44,12 @@ namespace Project5
 
         protected void Button2_Click(object sender, EventArgs e)
         {
+            int id = Convert.ToInt32(Session["userID"].ToString());
+
             SqlConnection connection = new SqlConnection("data source = DESKTOP-EJ4EJ89\\SQLEXPRESS; database=MobileZone;integrated security=SSPI");
             connection.Open();
-            SqlCommand com1 = new SqlCommand("update Users set  firstName=@firstName,lastName=@lastName,email=@email,password=@password,phoneNumber=@phoneNumber where id=4 ", connection);
+
+            SqlCommand com1 = new SqlCommand($"update Users set  firstName=@firstName,lastName=@lastName,email=@email,password=@password,phoneNumber=@phoneNumber where id={id} ", connection);
             com1.Parameters.AddWithValue("@firstName", (TextBox1.Text));
             com1.Parameters.AddWithValue("@lastName", (TextBox2.Text));
             com1.Parameters.AddWithValue("@email", (TextBox3.Text));

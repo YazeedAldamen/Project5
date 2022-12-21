@@ -42,10 +42,10 @@ namespace Project5
                 SqlCommand com = new SqlCommand($"select * from Product where product_id={productID}", con);
                 SqlDataReader sdr = com.ExecuteReader();
                 sdr.Read();
-                Response.Write(sdr[0] + " " + sdr[1] + "  " + sdr[3] + " " + sdr[6]);
+                //Response.Write(sdr[0] + " " + sdr[1] + "  " + sdr[3] + " " + sdr[6]);
 
                 int quantity = Convert.ToInt32(ProductQtn.SelectedValue);
-                Response.Write(quantity);
+                //Response.Write(quantity);
                 int userID = Convert.ToInt32(Session["userID"]);
                 double price = Convert.ToDouble(sdr[6]);
                 string query = $"insert into Cart values({userID} , {sdr[0]} ,{quantity}, {price} , {price * quantity} , '{sdr[1]}' , '{sdr[3]}' )";
@@ -53,7 +53,7 @@ namespace Project5
                 con.Open();
                 SqlCommand addToCart = new SqlCommand(query, con);
                 addToCart.ExecuteNonQuery();
-
+                
             
         }
     }

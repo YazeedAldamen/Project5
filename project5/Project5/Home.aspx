@@ -68,6 +68,9 @@
                     <li class="nav-item">
                         <a class="nav-link  p-lg-3" href="#">onePlus</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link  p-lg-3" href="CustomerProfile.aspx">Profile</a>
+                    </li>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle  p-lg-3 " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -82,15 +85,15 @@
                     </li>
 
                     <li class="nav-item">
-                        <div class="d-flex align-items-center mt-ms-5"><button class="buttonTop">Sign in</button></div>
+                        <div class="d-flex align-items-center mt-ms-5"><button class="buttonTop"><a href="Login.aspx">Log Out</a></button></div>
                     </li>
 
-                    <li class="nav-item">
+                  <%--  <li class="nav-item">
                         <div class="d-flex align-items-center"><button class="buttonTop">Sign Up</button></div>
-                    </li>
+                    </li>--%>
 
                     <li class="nav-item">
-                        <a href="" >
+                        <a href="cart.aspx" >
                             <img class="nav-link  " aria-current="page" width="60%" src="img/cart icon.png" alt="">
                         </a>
                     </li>

@@ -5,8 +5,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <link href="sth.css" rel="stylesheet" />
     <title></title>
+    <link href="sth.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous"/>
        <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -37,7 +37,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav d-flex align-items-center">
                     <li class="nav-itemp-lg-1">
-                        <img  aria-current="page" width="20%" src="img/Mobail Zone Logo.png" alt="">
+                        <img  aria-current="page" width="10%" src="img/Mobail Zone Logo.png" alt="" style="width:25%; height:25%;">
 
                     </li>
                     <li class="nav-item">
@@ -72,13 +72,13 @@
                         </ul>
                     </li>
 
-                    <li class="nav-item">
+                   <%-- <li class="nav-item">
                         <div class="d-flex align-items-center mt-ms-5"><button class="buttonTop">Sign in</button></div>
                     </li>
 
                     <li class="nav-item">
                         <div class="d-flex align-items-center"><button class="buttonTop">Sign Up</button></div>
-                    </li>
+                    </li>--%>
 
                     <li class="nav-item">
                         <a href="" >
