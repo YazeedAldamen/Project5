@@ -28,7 +28,7 @@
 <body>
 
     <form id="form1" runat="server">
-        <nav class="navbar navbar-expand-lg sticky-top ">
+        <nav class="navbar navbar-expand-lg  ">
         <div class="container-fluid">
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -151,7 +151,144 @@
 
             </div>
         </div>
- 
+     <footer class="bg-dark text-center text-white">
+        <!-- Grid container -->
+        <div class="container p-4">
+            <!-- Section: Social media -->
+            <section class="mb-4">
+                <!-- Facebook -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+
+                <!-- Twitter -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <i class="fab fa-twitter"></i>
+                </a>
+
+                <!-- Google -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <i class="fab fa-google"></i>
+                </a>
+
+                <!-- Instagram -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <i class="fab fa-instagram"></i>
+                </a>
+
+                <!-- Linkedin -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+
+                <!-- Github -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <i class="fab fa-github"></i>
+                </a>
+            </section>
+            <!-- Section: Social media -->
+            <!-- Section: Form -->
+            <section class="">
+                    <!--Grid row-->
+                    <div class="row d-flex justify-content-center">
+                        <!--Grid column-->
+                        <div class="col-auto">
+
+                        </div>
+                        <!--Grid column-->
+                        <!--Grid column-->
+                        <div class="col-md-5 col-12">
+
+                            <!--Grid column-->
+                        </div>
+                        <!--Grid row-->
+               
+            </section>
+            <!-- Section: Form -->
+            <!-- Section: Text -->
+            <section class="mb-4">
+                <p>
+                    Mobile Zone is the leading distributor and retailer of mobile devices in the Middle East, representing some of leading brands in the world since its inception in 2006.
+
+                </p>
+            </section>
+            <!-- Section: Text -->
+            <!-- Section: Links -->
+            <section class="">
+                <!--Grid row-->
+                <div class="row">
+                    <!--Grid column-->
+                    <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">Important Links</h5>
+
+                        <ul class="list-unstyled mb-0">
+                            <li>
+                                <a href="#!" class="text-white">Home</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white">Contact Us</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white">About Us</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white">Blog</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--Grid column-->
+                    <!--Grid column-->
+                    <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">Product</h5>
+
+                        <ul class="list-unstyled mb-0">
+                            <li>
+                                <a href="#!" class="text-white">Samsung</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white">Apple</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white">Xiaomi</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white">OppO</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--Grid column-->
+                    <!--Grid column-->
+                    <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">Terms</h5>
+
+                        <ul class="list-unstyled mb-0">
+                            <li>
+                                <a href="#!" class="text-white">Privacy Policy</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white">Terms & Conditions</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white">Refund and Return Policy</a>
+                            </li>
+                           
+                        </ul>
+                    </div>
+                    <!--Grid column-->
+                   
+                </div>
+                <!--Grid row-->
+            </section>
+            <!-- Section: Links -->
+        </div>
+        <!-- Grid container -->
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2022 Copyright:
+            <a class="text-white" href="">Mobile Zone</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
     </form>
 </body>
 </html>
