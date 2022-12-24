@@ -41,7 +41,7 @@
 
         </div>
         <div class="imagebox">
-     <asp:Image ID="Image2" runat="server" src="\images\log in (1).jpg" />
+        <asp:Image ID="Image2" runat="server" src="\images\log in (1).jpg" />
 
         </div>
 

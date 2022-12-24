@@ -183,7 +183,7 @@
                             
                             <asp:Button CssClass="button add-cart" ID="Button1" runat="server" Text="Add to Cart" OnClick="Button1_Click" />
                             <button class="button add-cart"><a href="cart.aspx" style="text-decoration:none; color:black;">Continue Shopping</a></button>
-
+<%--                            <asp:Label ID="Label1" runat="server" Text="Your Items Have been added to your cart"></asp:Label>--%>
                         </div>
                     </div>
                 </div>

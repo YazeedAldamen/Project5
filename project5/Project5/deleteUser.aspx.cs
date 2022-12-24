@@ -18,11 +18,33 @@ namespace Project5
             string userid = Request.QueryString["userid"];
             Response.Write(userid);
 
-            deleteFromCart();
-            deleteFromOrderDetails();
-            deleteFromOrders();
-            deleteUser();
-            Response.Redirect("admin.aspx");
+            //deleteFromCart();
+            //deleteFromOrderDetails();
+            //deleteFromOrders();
+            try
+            {
+                deleteUser();
+                Response.Redirect("admin.aspx");
+            }
+            catch
+            {
+                Response.Write("<script>alrt('Cannot Delete A User With Past Orders')");
+                Response.Redirect("admin.aspx");
+            }
+
+
+        }
+
+        protected void deleteUser()
+        {
+            string userid = Request.QueryString["userid"];
+            //Response.Write(userid);
+            SqlConnection connect = new SqlConnection("data source=DESKTOP-EJ4EJ89\\SQLEXPRESS ; database=MobileZone ; integrated security= SSPI ");
+            string q = $"delete from Users where ID={userid}";
+            SqlCommand com = new SqlCommand(q, connect);
+            connect.Open();
+            com.ExecuteNonQuery();
+            connect.Close();
         }
 
         protected void deleteFromCart() {
@@ -88,15 +110,6 @@ namespace Project5
             return orders;
 
         }
-        protected void deleteUser() {
-            string userid = Request.QueryString["userid"];
-            //Response.Write(userid);
-            SqlConnection connect = new SqlConnection("data source=DESKTOP-EJ4EJ89\\SQLEXPRESS ; database=MobileZone ; integrated security= SSPI ");
-            string q = $"delete from Users where ID={userid}";
-            SqlCommand com = new SqlCommand(q, connect);
-            connect.Open();
-            com.ExecuteNonQuery();
-            connect.Close();
-        }
+
     }
 }

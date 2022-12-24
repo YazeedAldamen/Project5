@@ -13,7 +13,7 @@ namespace Project5
         protected void Page_Load(object sender, EventArgs e)
         {
             SqlConnection connect = new SqlConnection("data source=DESKTOP-EJ4EJ89\\SQLEXPRESS ; database=MobileZone ; integrated security= SSPI ");
-            string table = "<table class='table table-striped'> <tr><th>ID</th><th>Name</th> <th>Descreption</th>  <th>img1</th> <th>img2</th> <th>img3</th> <th>price</th> </tr>";
+            string table = "<table class='table table-striped'> <tr><th>ID</th><th>Name</th> <th>Descreption</th>  <th>Img1</th> <th>Img2</th> <th>Img3</th> <th>Price</th><th>Delete</th> </tr>";
             SqlCommand comand = new SqlCommand("select * from Product ", connect);
 
             connect.Open();
@@ -21,7 +21,7 @@ namespace Project5
 
             while (sdr.Read())
             {
-                table += $"<tr><td>{sdr[0]}</td><td>{sdr[1]}</td><td>{sdr[2]}</td> <td><img src='{sdr[3]}'></td><td><img src='{sdr[4]}'></td><td><img src='{sdr[5]}'></td> <td>{sdr[6]}</td> <td><a href='deleteproducts.aspx?userid={sdr[0]}'>Delete</a></td> </tr>";
+                table += $"<tr><td>{sdr[0]}</td><td>{sdr[1]}</td><td>{sdr[2]}</td> <td><img src='{sdr[3]}'></td><td><img src='{sdr[4]}'></td><td><img src='{sdr[5]}'></td> <td>{sdr[6]}</td> <td><a href='deleteproducts.aspx?userid={sdr[0]}'><i class=\"fa-solid fa-trash-can\" style='color:red;'></i></a></td> </tr>";
 
             }
             table += "</table>";

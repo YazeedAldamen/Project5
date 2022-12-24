@@ -18,6 +18,7 @@ namespace Project5
 
         protected void chekout_Click(object sender, EventArgs e)
         {
+
             SqlConnection con = new SqlConnection("data source=DESKTOP-EJ4EJ89\\SQLEXPRESS ;database=MobileZone; integrated security=SSPI");
             SqlCommand com = new SqlCommand("select * from cart", con);
             con.Open();
@@ -32,6 +33,7 @@ namespace Project5
             int userID = Convert.ToInt32(Session["userID"]);
             SqlConnection con = new SqlConnection("data source=DESKTOP-EJ4EJ89\\SQLEXPRESS ;database=MobileZone; integrated security=SSPI");
             SqlCommand com = new SqlCommand($"select sum(price) from cart where user_id = {userID}", con);
+
             con.Open();
             DateTime d = DateTime.Now;
             int year = d.Year;

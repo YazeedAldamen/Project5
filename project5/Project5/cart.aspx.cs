@@ -1,6 +1,7 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -34,7 +35,29 @@ namespace Project5
 
         protected void checkOut_Click(object sender, EventArgs e)
         {
-            Response.Redirect("checkOut.aspx");
+            
+            
+                int userID = Convert.ToInt32(Session["userID"].ToString());
+                SqlConnection con = new SqlConnection("data source=DESKTOP-EJ4EJ89\\SQLEXPRESS ; database=MobileZone ; integrated security = SSPI");
+                con.Open();
+                SqlCommand getCatCom = new SqlCommand($"select * from cart  where user_id={userID}", con);
+
+                SqlDataReader dr = getCatCom.ExecuteReader();
+
+                
+
+                if(dr.Read())
+                {
+                    Response.Redirect("checkOut.aspx");
+
+                }
+
+            else
+            {
+                Response.Write("<script>alert('Your Cart is Empty')</script>");
+            }
+            
+         
 
         }
     }
