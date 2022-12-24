@@ -22,7 +22,7 @@
     position: relative;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 500px;
 }
 
 .row {
@@ -31,7 +31,7 @@
 }
 
 .col-6 {
-    width: 50%;
+    width: 40%;
 }
 
 .single-product {

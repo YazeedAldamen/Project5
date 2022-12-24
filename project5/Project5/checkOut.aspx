@@ -58,11 +58,11 @@
               </div>
               <div class='form-group expiration required'>
                 <label class='control-label'>Expiration</label>
-                <input class='form-control required card-expiry-month' placeholder='MM' size='2' type='text'>
+                <input class='form-control required card-expiry-month' placeholder='MM' size='2' type='text' required>
               </div>
               <div class='form-group expiration required'>
                 <label class='control-label'>Year</label>
-                <input class='form-control required card-expiry-year' placeholder='YYYY' size='4' type='text'>
+                <input class='form-control required card-expiry-year' placeholder='YYYY' size='4' type='text' required>
               </div>
             </div>
     

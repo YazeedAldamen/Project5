@@ -12,6 +12,15 @@ namespace Project5
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            try
+            {
+                Response.Write(Session["userid"].ToString());
+
+            }
+            catch(Exception)
+            {
+                Response.Redirect("Login.aspx");
+            }
             SqlConnection connect = new SqlConnection("data source=DESKTOP-EJ4EJ89\\SQLEXPRESS ; database=MobileZone ; integrated security= SSPI ");
             string table = "<table class='table table-striped'> <tr><th>ID</th><th>First Name</th> <th>Last Name</th> <th>Email</th>   <th>Phone Number</th> </tr>";
             SqlCommand comand = new SqlCommand("select * from users ", connect);

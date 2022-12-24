@@ -108,6 +108,7 @@
     <Content Include="Login.css" />
     <Content Include="profile.css" />
     <Content Include="Reg.css" />
+    <Content Include="reg.js" />
     <Content Include="Registration.aspx" />
     <Content Include="script.js" />
     <Content Include="script11.js" />

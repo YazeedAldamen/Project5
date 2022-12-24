@@ -26,11 +26,12 @@ namespace Project5
             SqlCommand command = new SqlCommand("select email,password,id from Users ", connection);
             connection.Open();
             SqlDataReader sdr = command.ExecuteReader();
+            
             while (sdr.Read())
             {
                 if (Email.Value == "haitham@gmail.com" && Password1.Value == "9")
                 {
-
+                    Session["userid"] = sdr[2];
                     Response.Redirect("Admin.aspx");
 
                     break;

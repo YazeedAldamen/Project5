@@ -7,14 +7,16 @@
 
 
 /* Start Navbar */
-
+.dropdown-item{
+    color:black !important;
+}
 .buttonTop {
     border: none;
     border-radius: 10px;
     font-size: 20px;
     color: white;
     background-color: var(--orange);
-    width: 80px;
+    width: 90px;
     height: 50px;
     margin-right: 20px;
 }
@@ -23,7 +25,7 @@
     background-color: var(--blue);
     font-family: var(--Font);
     font-weight: 700;
-    font-size: 25px;
+    font-size: 20px;
 }
 
     .navbar .navbar-nav .nav-link.active,
@@ -33,22 +35,35 @@
     }
 
     .navbar a {
-        color: white;
+        color: black;
     }
 
 /*    start carosule*/
-.carousel .carousel-inner {
-    height: 600px
+/*.carousel .carousel-inner {
+    height: 600px;
+    border: 3px solid green;
+}*/
+
+
+.c-item {
+    height: 480px;
 }
 
-.carousel-inner h5 {
-    position: absolute;
-    margin: 0;
-    color: white;
-    left: 500%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+.c-img {
+    height: 600px;
+    object-fit: cover;
+    filter: brightness(0.6);
 }
+
+#vvv{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:var(--blue);
+    font-family: var(--Font);
+    font-size:40px;
+}
+
 /*End carosule */
 /* Start Features */
 .features .icon-holder {
@@ -89,7 +104,14 @@
 
 /* logo slider start */
 
+#cart{
+    color: var(--orange);
+    font-size:30px;
+}
 
+
+
+ 
 .owl-dots {
     text-align: center;
     margin-top: 4%;
@@ -338,3 +360,53 @@
     background-color: var(--blue) !important;
 }
 /*end footer*/
+
+
+/*start*/
+
+
+.container {
+    margin-top: 100px;
+}
+
+.counter-box {
+    display: block;
+    background: #f6f6f6;
+    padding: 40px 20px 37px;
+    text-align: center
+}
+
+    .counter-box p {
+        margin: 5px 0 0;
+        padding: 0;
+        color: #909090;
+        font-size: 18px;
+        font-weight: 500
+    }
+
+    .counter-box i {
+        font-size: 60px;
+        margin: 0 0 15px;
+        color: #d2d2d2
+    }
+
+.counter {
+    display: block;
+    font-size: 32px;
+    font-weight: 700;
+    color: #666;
+    line-height: 28px
+}
+
+.counter-box.colored {
+    background: #3acf87;
+}
+
+    .counter-box.colored p,
+    .counter-box.colored i,
+    .counter-box.colored .counter {
+        color: #fff
+    }
+
+
+/*end*/

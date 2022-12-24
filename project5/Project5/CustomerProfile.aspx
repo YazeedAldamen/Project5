@@ -120,26 +120,33 @@
                 <div class="form-outline mb-4">
                     <label class="form-label" for="form3Example3cg">First Name</label>
                                       <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control form-control-lg"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="*Required" ControlToValidate="TextBox1" ForeColor="Red"></asp:RequiredFieldValidator>
                 </div>
 
                 <div class="form-outline mb-4">
                     <label class="form-label" for="form3Example3cg">Last Name</label>
                     <asp:TextBox ID="TextBox2" runat="server" class="form-control form-control-lg"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="*Required" ControlToValidate="TextBox2" ForeColor="Red"></asp:RequiredFieldValidator>
                 </div>
 
                 <div class="form-outline mb-4">
                   
                   <label class="form-label" for="form3Example4cg">Email</label>
-                    <asp:TextBox ID="TextBox3" runat="server" class="form-control form-control-lg"></asp:TextBox>
+                    <p id="TextBox3" runat="server"></p>
                 </div>
 
                 <div class="form-outline mb-4">
                   <label class="form-label" for="form3Example4cdg">Password</label>
-                    <asp:TextBox ID="TextBox4" runat="server" class="form-control form-control-lg"></asp:TextBox>
+                    <asp:TextBox ID="TextBox4" runat="server" class="form-control form-control-lg" ></asp:TextBox>
+                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="*Required" ControlToValidate="TextBox4" ForeColor="Red"></asp:RequiredFieldValidator>
+                    
+<%--                    <input type="password" name="name" value="" id="TextBox4" runat="server"/>--%>
                 </div>
+               
                 <div class="form-outline mb-4">
                   <label class="form-label" for="form3Example4cdg">Phone Number</label>
                     <asp:TextBox ID="TextBox5" runat="server" class="form-control form-control-lg"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="*Required" ControlToValidate="TextBox5" ForeColor="Red" ></asp:RequiredFieldValidator>
                 </div>
                
                 <div class="d-flex justify-content-center">
@@ -156,6 +163,11 @@
       </div>
     </div>
   </div>
+
+        <script>
+            document.getElementById("TextBox4").type = "password";
+            
+        </script>
             </form>
 
 </body>

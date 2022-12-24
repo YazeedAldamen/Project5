@@ -28,7 +28,7 @@
 <body>
 
     <form id="form1" runat="server">
-        <nav class="navbar navbar-expand-lg  ">
+        <nav class="navbar navbar-expand-lg sticky-top ">
         <div class="container-fluid">
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,52 +37,57 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav d-flex align-items-center">
                     <li class="nav-itemp-lg-1">
-                        <img  aria-current="page" width="10%" src="img/Mobail Zone Logo.png" alt="" style="width:25%; height:25%;">
+                        <img  aria-current="page" style="width:20%" src="img/Mobail Zone Logo.png" alt="">
 
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link  p-lg-3" aria-current="page" href="#">Apple</a>
+                        <a class="nav-link  p-lg-3" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link  p-lg-3" aria-current="page" href="#">Samsung</a>
+                        <a class="nav-link  p-lg-3" aria-current="page" href="#">AboutUs</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link  p-lg-3 " href="#">Xiaomi</a>
+                        <a class="nav-link  p-lg-3 " href="#">ContactUs</a>
                     </li>
+                  
                     <li class="nav-item">
-                        <a class="nav-link  p-lg-3" href="#">Oppo</a>
+                        <a class="nav-link  p-lg-3" href="CustomerProfile.aspx">Profile</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link  p-lg-3" href="#">Huawei</a>
-                    </li>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link  p-lg-3" href="#">onePlus</a>
-                    </li>
-                    </li>
+                   
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle  p-lg-3 " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Other
+                            Categories
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Nokia</a></li>
-                            <li><a class="dropdown-item" href="#">motrola</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Sony</a></li>
+                                        <%
+             SqlConnection conn = new SqlConnection("data source=DESKTOP-EJ4EJ89\\SQLEXPRESS ; database=MobileZone ; integrated security = SSPI");
+             conn.Open();
+             SqlCommand comm = new SqlCommand($"select * from category", conn);
+             SqlDataReader sdrr = comm.ExecuteReader();
+             while (sdrr.Read())
+             {
+            %>
+    
+                            <li><a class="dropdown-item" href="sth.aspx?catID=<%=sdrr[0]%>" ><%=sdrr[1]%></a></li>
+
+        
+            <%}%>
+                    
+
                         </ul>
                     </li>
 
-                   <%-- <li class="nav-item">
-                        <div class="d-flex align-items-center mt-ms-5"><button class="buttonTop">Sign in</button></div>
+                    <li class="nav-item">
+                        <div class="d-flex align-items-center mt-ms-5"><button class="buttonTop"><a href="Login.aspx">Log Out</a></button></div>
                     </li>
 
-                    <li class="nav-item">
+                  <%--  <li class="nav-item">
                         <div class="d-flex align-items-center"><button class="buttonTop">Sign Up</button></div>
                     </li>--%>
 
                     <li class="nav-item">
-                        <a href="" >
-                            <img class="nav-link  " aria-current="page" width="60%" src="img/cart icon.png" alt="">
+                        <a href="cart.aspx" >
+                            <i class="fa-solid fa-cart-shopping" id="cart"></i>
                         </a>
                     </li>
 
@@ -119,6 +124,8 @@
             <div class="container">
 
                 <% 
+                    catID = Request.QueryString["catID"] ;
+
                     con.Close();
                     SqlCommand getProductCom = new SqlCommand($"select * from product where category_id = {int.Parse(catID)}", con);
                     con.Open();
@@ -127,15 +134,22 @@
                     {
                     %>
 
-                      <div class="card">
+                     <%-- <div class="card">
                           <div class="image"><a href="singleProduct.aspx?pid=<%=drProduct[0]%>"><img src="<%=drProduct[3]%>""/></a></div>
                           <div class="text">
                               <h2><%=drProduct[1]%></h2>
                               <h3>$<%=drProduct[6]%></h3>
                           </div>
-                      </div>
+                      </div>--%>
 
-
+                <div class="card" style="width: 18rem;">
+                    <img src="src="<%=drProduct[3]%>"" class="card-img-top" alt="..."/>
+                    <div class="card-body">
+                        <h5 class="card-title"><%=drProduct[1]%></h5>
+                        <p class="card-text"><%=drProduct[1]%></p>
+                        <a href="singleProduct.aspx?pid=<%=drProduct[0]%>" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
 
 
          <%--               <div class="card" style="width: 18rem;">

@@ -20,7 +20,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@100;700&display=swap" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@100;700&display=swap');
-    </style></head>
+    </style>
+<%--    <script>
+        $(document).ready(function () {
+
+            $('.counter').each(function () {
+                $(this).prop('Counter', 0).animate({
+                    Counter: $(this).text()
+                }, {
+                    duration: 4000,
+                    easing: 'swing',
+                    step: function (now) {
+                        $(this).text(Math.ceil(now));
+                    }
+                });
+            });
+
+        });
+    </script>--%>
+</head>
 <body>
     <form id="form1" runat="server">
         <div class="container-fluid ">
@@ -46,41 +64,42 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav d-flex align-items-center">
                     <li class="nav-itemp-lg-1">
-                        <img  aria-current="page" width="20%" src="img/Mobail Zone Logo.png" alt="">
+                        <img  aria-current="page" style="width:20%;" src="img/Mobail Zone Logo.png" alt="">
 
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link  p-lg-3" aria-current="page" href="#">Apple</a>
+                        <a class="nav-link  p-lg-3" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link  p-lg-3" aria-current="page" href="#">Samsung</a>
+                        <a class="nav-link  p-lg-3" aria-current="page" href="#">AboutUs</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link  p-lg-3 " href="#">Xiaomi</a>
+                        <a class="nav-link  p-lg-3 " href="#">ContactUs</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link  p-lg-3" href="#">Oppo</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link  p-lg-3" href="#">Huawei</a>
-                    </li>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link  p-lg-3" href="#">onePlus</a>
-                    </li>
+                  
                     <li class="nav-item">
                         <a class="nav-link  p-lg-3" href="CustomerProfile.aspx">Profile</a>
                     </li>
-                    </li>
+                   
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle  p-lg-3 " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Other
+                            Categories
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Nokia</a></li>
-                            <li><a class="dropdown-item" href="#">motrola</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Sony</a></li>
+                                        <%
+             SqlConnection conn = new SqlConnection("data source=DESKTOP-EJ4EJ89\\SQLEXPRESS ; database=MobileZone ; integrated security = SSPI");
+             conn.Open();
+             SqlCommand comm = new SqlCommand($"select * from category", conn);
+             SqlDataReader sdrr = comm.ExecuteReader();
+             while (sdrr.Read())
+             {
+            %>
+    
+                            <li><a class="dropdown-item" href="sth.aspx?catID=<%=sdrr[0]%>" ><%=sdrr[1]%></a></li>
+        
+            <%}%>
+                    
+
                         </ul>
                     </li>
 
@@ -94,7 +113,7 @@
 
                     <li class="nav-item">
                         <a href="cart.aspx" >
-                            <img class="nav-link  " aria-current="page" width="60%" src="img/cart icon.png" alt="">
+                            <i class="fa-solid fa-cart-shopping" id="cart"></i>
                         </a>
                     </li>
 
@@ -103,47 +122,95 @@
             </div>
         </div>
     </nav>
-
+        
     <!-- Carousel Start -->
-    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000" data-mdb-keyboard="true">
+      <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
+    
         <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="img/slid11.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block  ">
-                  
-                </div>
+          <div class="carousel-item active c-item">
+            <img src="img/mobail4.jpg" class="d-block w-100 c-img" alt="Slide 1">
+            <div class="carousel-caption top-0 mt-4">
+              <p class="mt-5 fs-3 text-uppercase">Up To 30% off</p>
+              <h1 class="display-1 fw-bolder text-capitalize">Big Winter Sale</h1>
+              <button class="btn btn-primary px-4 py-2 fs-5 mt-5"><a href="#br" style="text-decoration:none; color:white">Shop Now</a></button>
             </div>
-            <div class="carousel-item">
-                <img src="img/slied2.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                  
-                </div>
+          </div>
+          <div class="carousel-item c-item">
+            <img src="img/mobaile2.jpeg" class="d-block w-100 c-img" alt="Slide 2">
+            <div class="carousel-caption top-0 mt-4">
+              <p class="text-uppercase fs-3 mt-5">The season has arrived</p>
+              <p class="display-1 fw-bolder text-capitalize">3 available tours</p>
+              <button class="btn btn-primary px-4 py-2 fs-5 mt-5" data-bs-toggle="modal"
+                data-bs-target="#booking-modal"><a href="#br" style="text-decoration:none; color:white">Shop Now</a></button>
             </div>
-            <div class="carousel-item">
-                <img src="img/slid3.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                   
-                </div>
+          </div>
+          <div class="carousel-item c-item">
+            <img src="img/mobail3.jpg" class="d-block w-100 c-img" alt="Slide 3">
+            <div class="carousel-caption top-0 mt-4">
+              <p class="text-uppercase fs-3 mt-5">Up To 30% off</p>
+              <p class="display-1 fw-bolder text-capitalize">Samsung Or Iphone ?</p>
+              <button class="btn btn-primary px-4 py-2 fs-5 mt-5" data-bs-toggle="modal"
+                data-bs-target="#booking-modal"><a href="#br" style="text-decoration:none; color:white">Shop Now</a></button>
             </div>
+          </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
+        <button class="carousel-control-prev" type="button" data-bs-target="#hero-carousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
+        <button class="carousel-control-next" type="button" data-bs-target="#hero-carousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
         </button>
-    </div>
-    <!-- Carousel End -->
+      </div>
+      <!-- Carousel End -->
+<%--        start--%>
+        <%--<div class="container">
+
+            <div class="row">
+
+                <div class="four col-md-3">
+                    <div class="counter-box colored">
+                        <i class="fa fa-thumbs-o-up"></i>
+                        <span class="counter">2147</span>
+                        <p>Happy Customers</p>
+                    </div>
+                </div>
+                <div class="four col-md-3">
+                    <div class="counter-box">
+                        <i class="fa fa-group"></i>
+                        <span class="counter">3275</span>
+                        <p>Registered Members</p>
+                    </div>
+                </div>
+                <div class="four col-md-3">
+                    <div class="counter-box">
+                        <i class="fa  fa-shopping-cart"></i>
+                        <span class="counter">289</span>
+                        <p>Available Products</p>
+                    </div>
+                </div>
+                <div class="four col-md-3">
+                    <div class="counter-box">
+                        <i class="fa  fa-user"></i>
+                        <span class="counter">1563</span>
+                        <p>Saved Trees</p>
+                    </div>
+                </div>
+            </div>
+        </div>--%>
+
+        <%--end--%>
     <!-- Services Section -->
+        <br />
+        <br />
     <section id="services">
-        <div class="container-fluid mt-5">
+        <div class="container-fluid mt-lg-5 mt-sm-2">
 
 
             <div class="row text-center">
@@ -177,32 +244,35 @@
     </section>
 
     <!-- category start  -->
-
-    <div class="container-fluid mt-5">
+        <br id="br" />
+        <br />
+        <br />
+                <div id="vvv" style="height:50px">
+            Category
+        </div>
+        
+    <div class="container-fluid mt-5" >
 
         <div class="row">
 
 
             <%
-             SqlConnection con = new SqlConnection("data source=DESKTOP-EJ4EJ89\\SQLEXPRESS ; database=MobileZone ; integrated security = SSPI");
-             con.Open();
-             SqlCommand com = new SqlCommand($"select * from category", con);
-             SqlDataReader sdr = com.ExecuteReader();
-             while (sdr.Read())
-             {
+                SqlConnection con = new SqlConnection("data source=DESKTOP-EJ4EJ89\\SQLEXPRESS ; database=MobileZone ; integrated security = SSPI");
+                con.Open();
+                SqlCommand com = new SqlCommand($"select * from category", con);
+                SqlDataReader sdr = com.ExecuteReader();
+                while (sdr.Read())
+                {
             %>
-        <div class="col-sm-12 col-md-6 col-lg-4">
-            <div class="box" id="samsung" >
-                <a  href="sth.aspx?catID=<%=sdr[0]%>"><img  src="<%=sdr[2]%>"  class="img-fluid"/></a>
-               
+            <div class="col-sm-12 col-md-6 col-lg-4">
+                <div class="box" id="samsung">
+                    <a href="sth.aspx?catID=<%=sdr[0]%>">
+                        <img src="<%=sdr[2]%>" class="img-fluid" /></a>
+
+                </div>
             </div>
-        </div>
-        
-       <%}%>
-            
 
-
-
+            <%}%>
         </div>
     </div>
 

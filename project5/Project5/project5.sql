@@ -15,6 +15,8 @@ select * from Users;
 --category_id int primary key identity(1,1),
 --category_name varchar(50),
 --category_img varchar(255),
+--category_desc varchar(255),
+--category_logo varchar(255),
 --);
 
 select * from Category;
@@ -32,6 +34,7 @@ select * from Category;
 --);
 
 select * from Product;
+
 
 --create table Orders (
 --order_id int primary key identity,
@@ -66,6 +69,7 @@ product_image varchar(255),
 cart_id int primary key identity
 );
 
+insert into Product(product_name, product_description, product_img1,product_img2,product_img3,price,category_id) values('Galaxy S20','Samsung Galaxy S20, the smallest of the S20 family, comes with a 6.2-inch display.','\images\s201.png','\images\s202.png','\images\s203.png','500','1');
 
 insert into Category(category_name , category_img, category_desc , category_logo  ) values('samsung' , 'images\Samsung_Logo.svg.png' , '
 Samsung Galaxy  is a series of computing and mobile computing devices that are designed, manufactured and 

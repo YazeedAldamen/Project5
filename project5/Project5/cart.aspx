@@ -15,6 +15,7 @@
 </head>
 <body>
     <form id="form" runat="server">
+
    <section class="vh-100" style="background-color: #fdccbc;">
   <div class="container h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
@@ -54,6 +55,7 @@
                 <div>
                   <p class="small text-muted mb-4 pb-2">Quantity</p>
                   <p class="lead fw-normal mb-0"><%=dr[2]%></p>
+                   
                 </div>
               </div>
               <div class="col-md-2 d-flex justify-content-center">

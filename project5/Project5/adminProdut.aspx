@@ -74,10 +74,15 @@
 
             <!-- Nav Item - Tables -->
   
-            <li class="nav-item">
+             <li class="nav-item">
                 <a class="nav-link" href="category.aspx">
                     <i class="fas fa-fw fa-table"></i>
                     <span>  Category</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="adminProdut.aspx">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>  product</span></a>
             </li>
 
             <!-- Divider -->

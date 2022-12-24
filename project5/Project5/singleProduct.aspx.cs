@@ -35,16 +35,18 @@ namespace Project5
         protected void Button1_Click(object sender, EventArgs e)
         {
 
-            productID = Request.QueryString["pid"];
+            try
+            {
+                productID = Request.QueryString["pid"];
 
-            SqlConnection con = new SqlConnection("data source=DESKTOP-EJ4EJ89\\SQLEXPRESS ; database=MobileZone ; integrated security = SSPI");
+                SqlConnection con = new SqlConnection("data source=DESKTOP-EJ4EJ89\\SQLEXPRESS ; database=MobileZone ; integrated security = SSPI");
                 con.Open();
                 SqlCommand com = new SqlCommand($"select * from Product where product_id={productID}", con);
                 SqlDataReader sdr = com.ExecuteReader();
                 sdr.Read();
                 //Response.Write(sdr[0] + " " + sdr[1] + "  " + sdr[3] + " " + sdr[6]);
 
-                int quantity = Convert.ToInt32(ProductQtn.SelectedValue);
+                int quantity = Convert.ToInt32(ProductQtn.Value);
                 //Response.Write(quantity);
                 int userID = Convert.ToInt32(Session["userID"]);
                 double price = Convert.ToDouble(sdr[6]);
@@ -53,8 +55,18 @@ namespace Project5
                 con.Open();
                 SqlCommand addToCart = new SqlCommand(query, con);
                 addToCart.ExecuteNonQuery();
-                
-            
+            }
+            catch (NullReferenceException)
+            {
+                Response.Redirect("Login.aspx");
+            }
+            catch (SqlException)
+            {
+                Response.Write("<script>alert('Login In To Add To your Cart')</script>");
+                //Response.Redirect("Login.aspx");
+            }
+
+
         }
     }
 }

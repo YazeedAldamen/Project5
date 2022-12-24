@@ -13,8 +13,13 @@
             left: -1px;
             top: 1px;
         }
+        body{
+            box-sizing:border-box;
+            margin:0;
+            padding:0;
+        }
     </style>
-    
+
 </head>
 <body>
     <form id="form1" runat="server">
@@ -43,6 +48,7 @@
 
                  <div class="password">
                     <input id="Password1" class="password1" type="password" name="password" value="" placeholder="Password" runat="server" required="required"/>
+
                 </div>
 
                  <div class="already">

@@ -35,7 +35,7 @@ namespace Project5
             sdr.Read();
             TextBox1.Text = sdr[1].ToString();
             TextBox2.Text = sdr[2].ToString();
-            TextBox3.Text = sdr[3].ToString();
+            TextBox3.InnerHtml = sdr[3].ToString();
             TextBox4.Text = sdr[4].ToString();
             TextBox5.Text = sdr[5].ToString();
 
@@ -49,10 +49,9 @@ namespace Project5
             SqlConnection connection = new SqlConnection("data source = DESKTOP-EJ4EJ89\\SQLEXPRESS; database=MobileZone;integrated security=SSPI");
             connection.Open();
 
-            SqlCommand com1 = new SqlCommand($"update Users set  firstName=@firstName,lastName=@lastName,email=@email,password=@password,phoneNumber=@phoneNumber where id={id} ", connection);
+            SqlCommand com1 = new SqlCommand($"update Users set  firstName=@firstName,lastName=@lastName,password=@password,phoneNumber=@phoneNumber where id={id} ", connection);
             com1.Parameters.AddWithValue("@firstName", (TextBox1.Text));
             com1.Parameters.AddWithValue("@lastName", (TextBox2.Text));
-            com1.Parameters.AddWithValue("@email", (TextBox3.Text));
             com1.Parameters.AddWithValue("@password", int.Parse(TextBox4.Text));
             com1.Parameters.AddWithValue("@phoneNumber", int.Parse(TextBox5.Text));
 

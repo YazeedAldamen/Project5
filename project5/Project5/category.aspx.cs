@@ -21,7 +21,7 @@ namespace Project5
            
             while (sdr.Read())
             {
-                table += $"<tr><td>{sdr[0]}</td><td>{sdr[1]}</td><td><img src='{sdr[2]}'></td><td>{sdr[3]}</td> <td><a href='deleteCat.aspx?userid={sdr[0]}'>Delete</a></td> </tr>";
+                table += $"<tr><td>{sdr[0]}</td><td>{sdr[1]}</td><td><img src='{sdr[2]}' style='width:160px; height:100px'></td><td>{sdr[3]}</td> <td><a href='deleteCat.aspx?userid={sdr[0]}'>Delete</a></td> </tr>";
 
             }
             table += "</table>";

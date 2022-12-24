@@ -13,5 +13,5 @@ $('.brand-carousel').owlCarousel({
         items:5
       }
     }
-  }) 
-  
+}) 
+
