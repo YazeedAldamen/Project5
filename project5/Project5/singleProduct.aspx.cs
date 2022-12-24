@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Diagnostics;
+using Microsoft.Win32;
 
 namespace Project5
 {
@@ -27,7 +28,24 @@ namespace Project5
                 description.InnerHtml = sdr[2].ToString();
 
             }
+            try
+            {
+                if (Session["userID"].ToString() != null)
+                {
+                    login.Visible = false;
+                    register.Visible = false;
+                }
 
+
+
+            }
+            catch (Exception)
+            {
+
+                logout.Visible = false;
+                profile.Visible = false;
+
+            }
 
 
         }
@@ -67,6 +85,12 @@ namespace Project5
             }
 
 
+        }
+
+        protected void logoutBtn_Click(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Response.Redirect("Login.aspx");
         }
     }
 }

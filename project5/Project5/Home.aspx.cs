@@ -11,10 +11,33 @@ namespace Project5
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            try
+            {
+                if (Session["userID"].ToString() != null) {
+                    login.Visible = false;
+                    register.Visible = false;
+                }
+
+
+
+            }
+            catch (Exception)
+            {
+
+                logout.Visible = false;
+                profile.Visible = false;
+
+            }
 
 
 
 
+        }
+
+        protected void logoutBtn_Click(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Response.Redirect("Login.aspx");
         }
     }
 }

@@ -5,7 +5,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title id="title" runat="server"></title>
     <link href="sth.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous"/>
        <meta charset="UTF-8">
@@ -28,7 +28,7 @@
 <body>
 
     <form id="form1" runat="server">
-        <nav class="navbar navbar-expand-lg sticky-top ">
+           <nav class="navbar navbar-expand-lg sticky-top ">
         <div class="container-fluid">
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,7 +37,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav d-flex align-items-center">
                     <li class="nav-itemp-lg-1">
-                        <img  aria-current="page" style="width:20%" src="img/Mobail Zone Logo.png" alt="">
+                        <img  aria-current="page" style="width:15%;" src="img/Mobail Zone Logo.png" alt="">
 
                     </li>
                     <li class="nav-item">
@@ -50,7 +50,7 @@
                         <a class="nav-link  p-lg-3 " href="#">ContactUs</a>
                     </li>
                   
-                    <li class="nav-item">
+                    <li class="nav-item" id="profile" runat="server" >
                         <a class="nav-link  p-lg-3" href="CustomerProfile.aspx">Profile</a>
                     </li>
                    
@@ -69,7 +69,6 @@
             %>
     
                             <li><a class="dropdown-item" href="sth.aspx?catID=<%=sdrr[0]%>" ><%=sdrr[1]%></a></li>
-
         
             <%}%>
                     
@@ -78,9 +77,14 @@
                     </li>
 
                     <li class="nav-item">
-                        <div class="d-flex align-items-center mt-ms-5"><button class="buttonTop"><a href="Login.aspx">Log Out</a></button></div>
+                        <div class="d-flex align-items-center mt-ms-5" id="logout" runat="server"><asp:Button ID="logoutBtn"  runat="server" Text="Log Out" CssClass="buttonTop" OnClick="logoutBtn_Click"/></div>
                     </li>
-
+                    <li class="nav-item">
+                        <div class="d-flex align-items-center mt-ms-5" id="login" runat="server"><button class="buttonTop"><a href="Login.aspx">Log In</a></button></div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="d-flex align-items-center mt-ms-5" id="register" runat="server"><button class="buttonTop"><a href="Registration.aspx">Register</a></button></div>
+                    </li>
                   <%--  <li class="nav-item">
                         <div class="d-flex align-items-center"><button class="buttonTop">Sign Up</button></div>
                     </li>--%>

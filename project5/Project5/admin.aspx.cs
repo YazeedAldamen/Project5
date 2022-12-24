@@ -14,10 +14,10 @@ namespace Project5
         {
             try
             {
-                Response.Write(Session["userid"].ToString());
+                if (Session["userid"].ToString() != null) { }
 
             }
-            catch(Exception)
+            catch (Exception)
             {
                 Response.Redirect("Login.aspx");
             }

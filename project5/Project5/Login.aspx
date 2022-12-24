@@ -24,19 +24,19 @@
 
 
 
-                    <div class="signup">
-                        <p>Don't have an account?<a href="Registration.aspx">Register here</a></p>
-                    </div>
+                    
 
                   <div id="Lable2">
                 <asp:Button ID="Button1" class="Button1" runat="server" Text="Log in" OnClick="Button1_Click" />
                       
                       <br />
                       <br />
-                      <br />
                       <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
 
             </div>
+                <div class="signup">
+                        <p>Don't have an account?<a href="Registration.aspx">Register here</a></p>
+                    </div>
             </div>
 
         </div>

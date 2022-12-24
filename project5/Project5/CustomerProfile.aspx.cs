@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Reflection.Emit;
 using System.Web.ModelBinding;
+using Microsoft.Win32;
 
 namespace Project5
 {
@@ -14,7 +15,24 @@ namespace Project5
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            try
+            {
+                if (Session["userID"].ToString() != null)
+                {
+                    login.Visible = false;
+                    register.Visible = false;
+                }
 
+
+
+            }
+            catch (Exception)
+            {
+
+                logout.Visible = false;
+                profile.Visible = false;
+
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -61,6 +79,16 @@ namespace Project5
             vv.Visible = true;
         }
 
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            editForm.Visible = false;
+            vv.Visible = true;
+        }
 
+        protected void logoutBtn_Click(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Response.Redirect("Login.aspx");
+        }
     }
 }

@@ -13,11 +13,12 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <title>Quiz Project</title>
+    <title>Home</title>
     <script src="https://kit.fontawesome.com/629d25c12e.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@100;700&display=swap" rel="stylesheet">
+    <link href="img/Mobail_Zone_Logo.png" rel="icon" />
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@100;700&display=swap');
     </style>
@@ -41,17 +42,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div class="container-fluid ">
-
-        <div class="row " class="navbarone">
-
-            <div class="col-md-8 col-sm-12">
-                
-            </div>
-           
-          
-        </div>
-    </div>
+       
 
     <!-- navbarone end -->
 
@@ -64,7 +55,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav d-flex align-items-center">
                     <li class="nav-itemp-lg-1">
-                        <img  aria-current="page" style="width:20%;" src="img/Mobail Zone Logo.png" alt="">
+                        <img  aria-current="page" style="width:15%;" src="img/Mobail Zone Logo.png" alt="">
 
                     </li>
                     <li class="nav-item">
@@ -77,7 +68,7 @@
                         <a class="nav-link  p-lg-3 " href="#">ContactUs</a>
                     </li>
                   
-                    <li class="nav-item">
+                    <li class="nav-item" id="profile" runat="server" >
                         <a class="nav-link  p-lg-3" href="CustomerProfile.aspx">Profile</a>
                     </li>
                    
@@ -97,16 +88,24 @@
     
                             <li><a class="dropdown-item" href="sth.aspx?catID=<%=sdrr[0]%>" ><%=sdrr[1]%></a></li>
         
-            <%}%>
+            <%
+
+
+                }%>
                     
 
                         </ul>
                     </li>
 
                     <li class="nav-item">
-                        <div class="d-flex align-items-center mt-ms-5"><button class="buttonTop"><a href="Login.aspx">Log Out</a></button></div>
+                        <div class="d-flex align-items-center mt-ms-5" id="logout" runat="server"><asp:Button ID="logoutBtn"  runat="server" Text="Log Out" CssClass="buttonTop" OnClick="logoutBtn_Click"/></div>
                     </li>
-
+                    <li class="nav-item">
+                        <div class="d-flex align-items-center mt-ms-5" id="login" runat="server"><button class="buttonTop"><a href="Login.aspx">Log In</a></button></div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="d-flex align-items-center mt-ms-5" id="register" runat="server"><button class="buttonTop"><a href="Registration.aspx">Register</a></button></div>
+                    </li>
                   <%--  <li class="nav-item">
                         <div class="d-flex align-items-center"><button class="buttonTop">Sign Up</button></div>
                     </li>--%>
@@ -272,7 +271,11 @@
                 </div>
             </div>
 
-            <%}%>
+            <%
+
+
+                }
+                con.Close();%>
         </div>
     </div>
 
