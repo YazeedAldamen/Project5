@@ -156,5 +156,10 @@ namespace Project5
         {
             Response.Redirect("category.aspx");
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("category.aspx");
+        }
     }
 }

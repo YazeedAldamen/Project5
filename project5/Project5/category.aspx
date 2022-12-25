@@ -179,11 +179,11 @@
                      <table>
                          <tr>
                              <td><label>Category Name  : </label></td>
-                             <td><asp:TextBox ID="catName" runat="server"></asp:TextBox></td>
+                             <td><asp:TextBox ID="catName" runat="server" ></asp:TextBox></td>
                          </tr>
                          <tr>
                              <td><label>Category  Descreption : </label></td>
-                             <td><asp:TextBox ID="catDesc" runat="server"></asp:TextBox></td>
+                             <td><asp:TextBox ID="catDesc" runat="server" TextMode="MultiLine"></asp:TextBox></td>
                          </tr>
                          <tr>
                              <td> <label>Category  Image : </label> </td>

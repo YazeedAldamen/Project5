@@ -200,9 +200,10 @@ namespace Project5
             Response.Redirect("adminProdut.aspx");
         }
 
-
-
-
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("adminProdut.aspx");
+        }
     }
 
 

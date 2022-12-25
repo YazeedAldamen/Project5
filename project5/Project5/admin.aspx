@@ -128,7 +128,7 @@
 
                         <!-- Nav Item - User Information -->
                         <li>
-                            <button class="buttonTop"><a href="Login.aspx" class="nav-link" style="width: 71px">Log Out</a></button>
+                            <button class="buttonTop"><a href="Login.aspx" class="nav-link">Log Out</a></button>
                         </li>
                 <%--        <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"

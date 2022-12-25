@@ -136,7 +136,7 @@
                          </tr>
                          <tr>
                              <td><label>Product  Descreption : </label></td>
-                             <td><asp:TextBox ID="productDesc" runat="server"></asp:TextBox></td>
+                             <td><asp:TextBox ID="productDesc" runat="server" TextMode="MultiLine"></asp:TextBox></td>
                          </tr>
                            <tr>
                              <td><label>Product  Price : </label></td>
