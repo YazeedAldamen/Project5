@@ -7,6 +7,8 @@
 --phoneNumber int,
 --);
 
+delete from Product where product_description=2;
+
 select * from Users;
 
 --insert into Users values ('Haitham','Hazaimeh','haitham@gmail.com','9',0778095538);
@@ -56,6 +58,7 @@ select * from Orders;
 --);
 
 select * from Order_Details;
+select * from cart;
 
 
 create table Cart(
@@ -94,3 +97,4 @@ insert into Category(category_name , category_img, category_desc , category_logo
 A China-based manufacturer of Android smartphones. Introduced in 2014, OnePlus models are unlocked Android smartphones with quad-core 
 Snapdragon CPUs and up to 8GB RAM ' , 'images\Samsung_Logo.svg.png');
 
+update  product  set product_name ='{name}' , product_description='{desc}' , product_img1='{imageWithFolder1}',product_img2 ='{imageWithFolder2}',product_img3= '{imageWithFolder3}', price=600, category_id=6  where product_id=8;

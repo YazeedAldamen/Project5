@@ -14,7 +14,7 @@ namespace Project5
         {
             try
             {
-                if (Session["userid"].ToString() != null) { }
+                if (Session["userid"].ToString() != null ) { }
 
             }
             catch (Exception)
@@ -28,10 +28,11 @@ namespace Project5
             connect.Open();
             SqlDataReader sdr = comand.ExecuteReader();
             sdr.Read();
+            int count=1;
             while (sdr.Read())
             {
-                table += $"<tr><td>{sdr[0]}</td><td>{sdr[1]}</td><td>{sdr[2]}</td><td>{sdr[3]}</td><td>{sdr[5]}</td>  <td><a href='deleteUser.aspx?userid={sdr[0]}'><i class=\"fa-solid fa-trash-can\" style='color:red;'></i></a></td> </tr>";
-
+                table += $"<tr><td>{count}</td><td>{sdr[1]}</td><td>{sdr[2]}</td><td>{sdr[3]}</td><td>{sdr[5]}</td>  <td><a href='deleteUser.aspx?userid={sdr[0]}'><i class=\"fa-solid fa-trash-can\" style='color:red;'></i></a></td> </tr>";
+                count++;
             }
             table += "</table>";
             Label label = new Label();

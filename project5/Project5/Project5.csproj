@@ -74,6 +74,7 @@
     <Content Include="checkOut.aspx" />
     <Content Include="deleteCat.aspx" />
     <Content Include="deleteFromCart.aspx" />
+    <Content Include="deleteProd.aspx" />
     <Content Include="deleteUser.aspx" />
     <Content Include="NewFolder1\Admin.aspx" />
     <Content Include="cart.aspx" />
@@ -162,6 +163,13 @@
     </Compile>
     <Compile Include="deleteFromCart.aspx.designer.cs">
       <DependentUpon>deleteFromCart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="deleteProd.aspx.cs">
+      <DependentUpon>deleteProd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="deleteProd.aspx.designer.cs">
+      <DependentUpon>deleteProd.aspx</DependentUpon>
     </Compile>
     <Compile Include="deleteUser.aspx.cs">
       <DependentUpon>deleteUser.aspx</DependentUpon>

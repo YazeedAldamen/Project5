@@ -31,8 +31,10 @@ namespace Project5
 
                 logout.Visible = false;
                 profile.Visible = false;
+                Response.Redirect("Login.aspx");
 
             }
+            showUserOrders();
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -89,6 +91,27 @@ namespace Project5
         {
             Session.Clear();
             Response.Redirect("Login.aspx");
+        }
+        protected void showUserOrders()
+        {
+            SqlConnection connection = new SqlConnection("data source = DESKTOP-EJ4EJ89\\SQLEXPRESS; database=MobileZone;integrated security=SSPI");
+            connection.Open();
+            int id = Convert.ToInt32(Session["userID"].ToString());
+            string q = $"select Orders.order_id ,   Orders.order_date , Order_Details.product_quantity , Product.price , Product.product_name ,   Order_Details.total_price  from orders  join Order_Details  on Orders.order_id = Order_Details.order_id join Product on Order_Details.product_id = Product.product_id where user_id = {id} order by order_id asc;;";
+
+            SqlCommand com = new SqlCommand(q, connection);
+            SqlDataReader sdr = com.ExecuteReader();
+
+            string table = "<table class='table table-striped'><tr><th>Order Number</th> <th>Order ID</th> <th>Order Date</th><th>Product Quantity</th><th>Product Price</th><th>Product Name</th><th>Total Price</th><th></th><th></th></tr>";
+            int count = 1;
+            while (sdr.Read())
+            {
+                table += $"<tr><td>{count++}</td><td>{sdr[0]}</td><td>{sdr[1]}</td><td>{sdr[2]}</td><td>{sdr[3]}</td><td>{sdr[4]}</td><td>{sdr[5]}</td>   </tr>";
+            }
+
+            table += "</table>";
+
+            ordersTable.Text = table;
         }
     }
 }

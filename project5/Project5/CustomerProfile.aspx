@@ -27,6 +27,11 @@
     <link href="img/Mobail_Zone_Logo.png" rel="icon" />
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@100;700&display=swap');
+        @media only screen and (min-device-width:0px) and (max-device-width:480px){
+            .user_orders{
+                display:none;
+            }
+        }
     </style>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -105,7 +110,7 @@
             </div>
         </nav>
         <div class="container" style="margin-top: 70px">
-            >
+           
     <div class="main-body">
 
 
@@ -187,6 +192,11 @@
                 </div>
 
             </div>
+            <div class="user_orders">
+                <h2>Your Previous Orders </h2>
+              <asp:Label ID="ordersTable" runat="server" Text="Label" CssClass="col-12"></asp:Label>
+                
+           </div>
         </div>
 
     </div>

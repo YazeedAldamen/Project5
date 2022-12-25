@@ -14,6 +14,17 @@
     <!------ Include the above in your HEAD tag ---------->
     <title>Derwiki's Stripe Payment form + checkout'</title>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha256-k2/8zcNbxVIh5mnQ52A0r3a6jAgMGxFJFE2707UxGCk= sha512-ZV9KawG2Legkwp3nAlxLIVFudTauWuBpC10uEafMHYL0Sarrz5A7G79kXh5+5+woxQ5HM559XX2UZjMJ36Wplg==" crossorigin="anonymous">
+    <style>
+        @media only screen and (min-device-width:0px) and (max-device-width:480px) {
+        .form-control{
+            height:110px !important;
+            font-size:35px;
+        }
+        .control-label{
+            font-size:30px;
+        }
+        }
+    </style>
 </head>
 <body style="font-family: 'Open Sans', sans-serif;">
 
@@ -25,7 +36,7 @@
     <hr class="featurette-divider"></hr>
     <div class="container">
         <div class="row">
-            <div class="col-sm-6">
+            <div class="col- 6 col-xs-12">
                 <div class="tab-content">
                     <div id="stripe" class="tab-pane fade in active">
                         <script src='https://js.stripe.com/v2/' type='text/javascript'></script>
@@ -39,14 +50,14 @@
               
                                         </div>
                                     </div>
-                                    <label class='control-label'>Name on Card</label>
+                                    <label class='control-label'>Name </label>
                                     <input class='form-control' required size='4' type='text'>
                                 </div>
 
                             </div>
                             <div class='form-row'>
                                 <div class='form-group card required'>
-                                    <label class='control-label'>Card Number</label>
+                                    <label class='control-label'>City</label>
                                     <input autocomplete='off' required class='form-control card-number' size='20' type='text'>
                                 </div>
                             </div>
@@ -58,17 +69,14 @@
                             </div>
                             <div class='form-row'>
                                 <div class='form-group cvc required'>
-                                    <label class='control-label'>CVC</label>
-                                    <input autocomplete='off' required class='form-control card-cvc' placeholder='ex. 311' size='4' type='text'>
+                                    <label class='control-label'>Building Name</label>
+                                    <input autocomplete='off' required class='form-control card-cvc'  size='4' type='text'>
                                 </div>
                                 <div class='form-group expiration required'>
-                                    <label class='control-label'>Expiration</label>
-                                    <input class='form-control required card-expiry-month' placeholder='MM' size='2' type='text' required>
+                                    <label class='control-label'>Phone Number</label>
+                                    <input class='form-control required card-expiry-month' size='2' type='text' required>
                                 </div>
-                                <div class='form-group expiration required'>
-                                    <label class='control-label'>Year</label>
-                                    <input class='form-control required card-expiry-year' placeholder='YYYY' size='4' type='text' required>
-                                </div>
+                               
                             </div>
 
 
@@ -82,7 +90,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-5">
+            <div class="col-5 col-xs-12">
 
 
                 <div id="smart-button-container">

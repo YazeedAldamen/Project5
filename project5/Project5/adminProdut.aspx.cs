@@ -15,29 +15,31 @@ namespace Project5
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            try
+            if (!IsPostBack)
             {
-                if (Session["userid"].ToString() != null) { }
+                try
+                {
+                    if (Session["userid"].ToString() != null) { }
 
-            }
-            catch (Exception)
-            {
-                Response.Redirect("Login.aspx");
-            }
-            Span1.Visible = false;
+                }
+                catch (Exception)
+                {
+                    Response.Redirect("Login.aspx");
+                }
+                Span1.Visible = false;
                 Span2.Visible = false;
                 Span3.Visible = false;
                 SqlConnection connect = new SqlConnection("data source=DESKTOP-EJ4EJ89\\SQLEXPRESS ; database=MobileZone ; integrated security= SSPI ");
-                string table = "<table class='table table-striped'> <tr><th>ID</th><th>Name</th> <th>Descreption</th>  <th>Img1</th> <th>Img2</th> <th>Img3</th> <th>Price</th><th>Delete</th> </tr>";
+                string table = "<table class='table table-striped'> <tr><th>ID</th><th>Name</th> <th>Descreption</th>  <th>Img1</th> <th>Img2</th> <th>Img3</th> <th>Price</th><th>Delete</th><th>Edit</th> </tr>";
                 SqlCommand comand = new SqlCommand("select * from Product ", connect);
 
                 connect.Open();
                 SqlDataReader sdr = comand.ExecuteReader();
-
+                int count = 1;
                 while (sdr.Read())
                 {
-                    table += $"<tr><td>{sdr[0]}</td><td>{sdr[1]}</td><td>{sdr[2]}</td> <td><img src='{sdr[3]}'></td><td><img src='{sdr[4]}'></td><td><img src='{sdr[5]}'></td> <td>{sdr[6]}</td> <td><a href='deleteproducts.aspx?userid={sdr[0]}'><i class=\"fa-solid fa-trash-can\" style='color:red;'></i></a></td> </tr>";
-
+                    table += $"<tr><td>{count}</td><td>{sdr[1]}</td><td>{sdr[2]}</td> <td><img src='{sdr[3]}'></td><td><img src='{sdr[4]}'></td><td><img src='{sdr[5]}'></td> <td>{sdr[6]}</td> <td><a href='deleteProd.aspx?prodID={sdr[0]}&type=delete'><i class=\"fa-solid fa-trash-can\" style='color:red;'></i></a></td> <td><a href='deleteProd.aspx?prodID={sdr[0]}&type=edit&catID={sdr[7]}'><i class=\"fa-regular fa-pen-to-square\"></i></a></td></tr>";
+                    count++;
                 }
                 table += "</table>";
                 Label label = new Label();
@@ -47,6 +49,7 @@ namespace Project5
                 connect.Close();
 
                 fillCat();
+            }
             
         }
         protected void fillCat()
@@ -76,7 +79,7 @@ namespace Project5
             string pDesc = productDesc.Text;
             string pCat = productCat.SelectedValue;
 
-            Response.Write(pCat);
+            //Response.Write(pCat);
             string path = Server.MapPath("/images/");
             string image1 = Path.GetFileName(FileUploadImage1.FileName);
             string image2 = Path.GetFileName(FileUploadImage2.FileName);
