@@ -29,7 +29,6 @@ namespace Project5
 
                 logout.Visible = false;
                 profile.Visible = false;
-
             }
         }
 

@@ -78,9 +78,16 @@ create table review (
 id int identity ,
 user_id int FOREIGN KEY REFERENCES  Users(id),
 product_id int FOREIGN KEY REFERENCES product(product_id),
-comment varchar(300) 
-)
+comment varchar(300) ,
+);
 
+create table contactinfo (
+firstname varchar(255),
+lastname varchar(255),
+email varchar(255),
+messege text,
+
+);
 
 
 insert into Product(product_name, product_description, product_img1,product_img2,product_img3,price,category_id) values('Galaxy S20','Samsung Galaxy S20, the smallest of the S20 family, comes with a 6.2-inch display.','\images\s201.png','\images\s202.png','\images\s203.png','500','1');

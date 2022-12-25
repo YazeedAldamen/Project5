@@ -1,34 +1,29 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="sth.aspx.cs" Inherits="Project5.sth" %>
-<%@ Import Namespace="System.Data.SqlClient"%>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="aboutus.aspx.cs" Inherits="Project5.aboutus" %>
+<%@ import Namespace="System.Data.SqlClient" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title id="title" runat="server"></title>
-    <link href="sth.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous"/>
-       <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/homepage.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-    
-    <script src="https://kit.fontawesome.com/629d25c12e.js" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <title>About Us</title>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="aboutus.css" />
+  <script src="https://kit.fontawesome.com/629d25c12e.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@100;700&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@100;700&display=swap');
-    </style></head>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@100;700&display=swap%27);
+    </style>
+
+
 </head>
 <body>
-
     <form id="form1" runat="server">
-           <nav class="navbar navbar-expand-lg sticky-top ">
+  <nav class="navbar navbar-expand-lg sticky-top ">
         <div class="container-fluid">
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,13 +36,13 @@
 
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link  p-lg-3" aria-current="page" href="Home.aspx">Home</a>
+                        <a class="nav-link  p-lg-3" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link  p-lg-3" aria-current="page" href="aboutus.aspx">AboutUs</a>
+                        <a class="nav-link  p-lg-3" aria-current="page" href="#">AboutUs</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link  p-lg-3 " href="contactUs.aspx">ContactUs</a>
+                        <a class="nav-link  p-lg-3 " href="#">ContactUs</a>
                     </li>
                   
                     <li class="nav-item" id="profile" runat="server" >
@@ -70,7 +65,10 @@
     
                             <li><a class="dropdown-item" href="sth.aspx?catID=<%=sdrr[0]%>" ><%=sdrr[1]%></a></li>
         
-            <%}%>
+            <%
+
+
+                }%>
                     
 
                         </ul>
@@ -100,76 +98,171 @@
             </div>
         </div>
     </nav>
-        <div class="header">
-            <div class="container">
-                <%
+         <section class="breadcrumbs-section">
+    <div class="container p-1 p-sm-3">
+      <div class="row">
+        <div class="col-12">
+          <h2>About Us</h2>
+         
+        </div>
+      </div>
+    </div>
 
-                    string catID = Request.QueryString["catID"] ;
-                    SqlConnection con = new SqlConnection("data source=DESKTOP-EJ4EJ89\\SQLEXPRESS ; database=MobileZone ; integrated security = SSPI");
-                    con.Open();
-                    SqlCommand getCatCom = new SqlCommand($"select * from category where category_id = {int.Parse(catID)} ", con);
+  </section>
 
-                    SqlDataReader drCat = getCatCom.ExecuteReader();
-                    drCat.Read();
+  <section class="about-company-section">
+    <div class="container p-1 p-sm-3">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h2>Who We Are?</h2>
+          <hr />
+        </div>
 
-                    %>
+        <div class="col-md-3">
+          <img class="img-fluid" src="\images\Mobail Zone Logo.png" alt="">
 
-                      <h2 ID="cat_name" > <%=drCat[1]%> </h2>
-                      <img src="<%=drCat[4]%>"" id="cat_image" style="height:150px; width:400px"/>
-                      <p><%=drCat[3]%></p>
+        </div>
 
+        <div class="col-md-9">
+          <p>
+            Mobile Zone is the leading distributor and retailer of mobile devices
+             in the Middle East, representing some of leading brands in the world
+              since its inception in 2006.<br>
+              <br>
+ 
+              Mobile Zonewas established with a singular objective: to offer cutting edge 
+              mobile technologies to all consumer segments, making sure that we fulfill the
+               often-ignored promise of an unparalleled customer experience. Today, we serve
+                a growing customer base through more than 3,200 points of sale, 13 showrooms and 
+                15 service centers across Palestine, Jordan and Iraq. We also launched an online
+                 store that was conceived to elevate the online shopping experience in the region
+                  by offering choice, ease-of-use, and security.a, consectetur odit quidem!
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- START : Home page 5rd section - Newsletter section -->
+ 
+  <!-- END : Home page 5th section - Newsletter section -->
+
+
+  <!-- START :  Home page 6th section - Our services -->
+  <section class="pt-3 pb-4">
+      <div class="container">
+          <div class="row mt-4">
+            <div class="col text-center">
+              <h3>
+                Our awesome team
+              </h3>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-md-4 text-center">
+              <img class="img-fluid qualities-img p-4" src="\images\sohaib.png" >
+              <h5>
+                member
+              </h5>
+              <p>
+                <i>- Sohaib AL-Rousan</i>
+              </p>
+    
+            </div>
+            <div class="col-md-4 text-center">
+              <img class="img-fluid qualities-img p-4" src="\images\haitham.png">
+              <h5>
+                Manager
+              </h5>
+              <p>
+                <i>- Sheikh Haitham Hazaimeh</i>
+              </p>
+    
+            </div>
+            <div class="col-md-4 text-center">
                 
-
-
-
+                <img class="img-fluid qualities-img p-4" src="\images\swalha.png">
+                <h5>
+                 Scrum master
+                </h5>
+                <p>
+                  <i>- Mohammad Swalha</i>
+                </p>
             </div>
-        </div>
-<div class="product">
-            <div class="container">
-
-                <% 
-                    catID = Request.QueryString["catID"] ;
-
-                    con.Close();
-                    SqlCommand getProductCom = new SqlCommand($"select * from product where category_id = {int.Parse(catID)}", con);
-                    con.Open();
-                    SqlDataReader drProduct = getProductCom.ExecuteReader();
-                    while (drProduct.Read())
-                    {
-                    %>
-
-                     <%-- <div class="card">
-                          <div class="image"><a href="singleProduct.aspx?pid=<%=drProduct[0]%>"><img src="<%=drProduct[3]%>""/></a></div>
-                          <div class="text">
-                              <h2><%=drProduct[1]%></h2>
-                              <h3>$<%=drProduct[6]%></h3>
-                          </div>
-                      </div>--%>
-
-                <div class="card" style="width: 18rem;">
-                    <img src="<%=drProduct[3]%>"" class="card-img-top" alt="..."/>
-                    <div class="card-body">
-                        <h5 class="card-title" style="font-weight:bold; color:black;"><%=drProduct[1]%></h5>
-<%--                        <p class="card-text"><%=drProduct[2]%></p>--%>
-                        <a href="singleProduct.aspx?pid=<%=drProduct[0]%>" class="btn btn-primary">Show</a>
-                    </div>
-                </div>
-
-
-         <%--               <div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="<%=drProduct[3]%>" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title"><%=drProduct[1]%></h5>
-    <p class="card-text">$<%=drProduct[6]%></p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>--%>
-
-                <%} %>
-
+          </div>
+    
+          <div class="row mb-md-3">
+            <div class="col-md-4 text-center">
+                <img class="img-fluid qualities-img p-4" src="\images\malik.png"/>
+                <h5>
+                  member
+                </h5>
+                <p>
+                  <i>- Malik Obidat</i>
+                </p>
             </div>
+            <div class="col-md-4 text-center">
+                <img class="img-fluid qualities-img p-4" src="\images\yazeed.png" ;">
+                <h5>
+member
+
+                </h5>
+                <p>
+                  <i>- Yazeed ALdamen</i>
+                </p>
+            </div>
+            <div class="col-md-4 text-center">
+                <img class="img-fluid qualities-img p-4" src="\images\intern.png"/>
+                <h5>
+                  member                </h5>
+                <p>
+                  <i>- Qais Drabseh</i>
+                </p>
+            </div>
+          </div>
+  </section>
+  <!-- END : Home page 6th section - Our services -->
+
+<!-- START :  Home page 7th section - clients -->
+<section class="pt-3 pb-4 clients-section">
+    <div class="container">
+        <div class="row">
+          <div class="col text-center">
+            <h3>
+                Some of our trusted clients.
+            </h3>
+          </div>
+         
         </div>
-     <footer class="bg-dark text-center text-white">
+        <hr>
+        <div class="row">
+            <div class="col-md-2 col-6">
+              <img class="img-fluid feature-img p-2" src="\images\surlatable.jfif" alt="Card images cap">
+            </div>
+            <div class="col-md-2 col-6">
+              <img class="img-fluid feature-img p-2" src="\images\goul.png" alt="Card images cap">
+            </div>
+            <div class="col-md-2 col-6">
+              <img class="img-fluid feature-img p-2" src="\images\plot bound.png" alt="Card images cap">
+            </div>
+            <div class="col-md-2 col-6">
+              <a class="navtext" class="navbar-brand " href="#" style="font-family: 'Ink Free'; font-size: 28px;margin-top: 250px;">Shine</a>
+              <!-- <img class="img-fluid feature-img p-2" src="imgs/clients/lnt.png" alt="Card images cap"> -->
+            </div>
+             <div class="col-md-2 col-6">
+              <img class="img-fluid feature-img p-2" src="\images\medical.png" alt="Card images cap">
+            </div>
+          
+          </div>
+        </div>
+  
+       
+  </section>
+        <!-- Footer Start -->
+    <!-- Footer -->
+    <footer class="bg-dark text-center text-white">
         <!-- Grid container -->
         <div class="container p-4">
             <!-- Section: Social media -->
@@ -220,7 +313,6 @@
                             <!--Grid column-->
                         </div>
                         <!--Grid row-->
-               
             </section>
             <!-- Section: Form -->
             <!-- Section: Text -->
@@ -307,6 +399,17 @@
         </div>
         <!-- Copyright -->
     </footer>
+    <!-- Footer -->
+  <!-- END : Home page 7th section - clients -->
+
+
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="bootstrap/js/jquery-3.3.1.slim.min.js"></script>
+  <script src="bootstrap/js/popper.min.js"></script>
+  <script src="bootstrap/js/bootstrap.min.js"></script>
     </form>
 </body>
 </html>

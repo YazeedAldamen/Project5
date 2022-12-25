@@ -49,15 +49,15 @@
                         <li class="nav-itemp-lg-1">
                             <img aria-current="page" style="width: 15%;" src="img/Mobail Zone Logo.png" alt="">
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link  p-lg-3" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link  p-lg-3" aria-current="page" href="#">AboutUs</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link  p-lg-3 " href="#">ContactUs</a>
-                        </li>
+                         <li class="nav-item">
+                        <a class="nav-link  p-lg-3" aria-current="page" href="Home.aspx">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link  p-lg-3" aria-current="page" href="aboutus.aspx">AboutUs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link  p-lg-3 " href="contactUs.aspx">ContactUs</a>
+                    </li>
 
                         <li class="nav-item" id="profile" runat="server">
                             <a class="nav-link  p-lg-3" href="CustomerProfile.aspx">Profile</a>
