@@ -135,4 +135,30 @@
     .imagebox {
         display: none;
     }
+
+    #information {
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+        background-color: #35b3f1;
+    }
+    #login{
+        width:100%;
+    }
+    #Image1{
+        width:50%;
+    }
+    #Email{
+        width:80%;
+        height:30px;
+    }
+    #Password1 {
+        width: 80%;
+        height: 30px;
+    }
+    .inputbox{
+        height:40px;
+    }
 }

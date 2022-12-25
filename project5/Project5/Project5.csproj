@@ -72,10 +72,15 @@
     <Content Include="adminProdut.aspx" />
     <Content Include="category.aspx" />
     <Content Include="checkOut.aspx" />
+    <Content Include="contact.css" />
+    <Content Include="contactUs.aspx" />
     <Content Include="deleteCat.aspx" />
     <Content Include="deleteFromCart.aspx" />
     <Content Include="deleteProd.aspx" />
     <Content Include="deleteUser.aspx" />
+    <Content Include="images\Direction towards the mobile zone, 1 km away.jpg" />
+    <Content Include="Login.css" />
+    <Content Include="Messeges.aspx" />
     <Content Include="NewFolder1\Admin.aspx" />
     <Content Include="cart.aspx" />
     <Content Include="css\demo.css" />
@@ -107,7 +112,6 @@
     <Content Include="img\Xiaomi.png" />
     <Content Include="js\script2.js" />
     <Content Include="Login.aspx" />
-    <Content Include="Login.css" />
     <Content Include="profile.css" />
     <Content Include="Reg.css" />
     <Content Include="reg.js" />
@@ -150,6 +154,13 @@
     <Compile Include="checkOut.aspx.designer.cs">
       <DependentUpon>checkOut.aspx</DependentUpon>
     </Compile>
+    <Compile Include="contactUs.aspx.cs">
+      <DependentUpon>contactUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="contactUs.aspx.designer.cs">
+      <DependentUpon>contactUs.aspx</DependentUpon>
+    </Compile>
     <Compile Include="deleteCat.aspx.cs">
       <DependentUpon>deleteCat.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -177,6 +188,13 @@
     </Compile>
     <Compile Include="deleteUser.aspx.designer.cs">
       <DependentUpon>deleteUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Messeges.aspx.cs">
+      <DependentUpon>Messeges.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Messeges.aspx.designer.cs">
+      <DependentUpon>Messeges.aspx</DependentUpon>
     </Compile>
     <Compile Include="NewFolder1\Admin.aspx.cs">
       <DependentUpon>Admin.aspx</DependentUpon>
@@ -257,7 +275,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="images\" />
     <Folder Include="Models\" />
     <Folder Include="style\" />
   </ItemGroup>

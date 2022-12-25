@@ -25,7 +25,13 @@
     <link rel="stylesheet" href="single.css">
     <!---Boxicons CDN Setup for icons-->
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-
+    <style>
+        .cont {
+          width:80%;
+          margin:0 auto;
+          padding: 87px 0px;
+        }
+        </style>
 </head>
 <body>
    <form id="form1" runat="server">
@@ -191,7 +197,14 @@
             </div>
         </div>
     </div>
+       <div class="cont">
+             <div class="addComment" id="addCommentt" runat="server">
+               <asp:TextBox ID="comment" runat="server"></asp:TextBox>
+               <asp:Button ID="addComment" runat="server" Text="Add Comment" OnClick="addComment_Click" />
+            </div>
 
+              <asp:Label  cssclass="conmments" ID="commentContainer" runat="server" ></asp:Label>
+        </div>
     <!--script-->
     <script src="script.js"></script>
        </form>

@@ -72,6 +72,17 @@ product_image varchar(255),
 cart_id int primary key identity
 );
 
+
+
+create table review (
+id int identity ,
+user_id int FOREIGN KEY REFERENCES  Users(id),
+product_id int FOREIGN KEY REFERENCES product(product_id),
+comment varchar(300) 
+)
+
+
+
 insert into Product(product_name, product_description, product_img1,product_img2,product_img3,price,category_id) values('Galaxy S20','Samsung Galaxy S20, the smallest of the S20 family, comes with a 6.2-inch display.','\images\s201.png','\images\s202.png','\images\s203.png','500','1');
 
 insert into Category(category_name , category_img, category_desc , category_logo  ) values('samsung' , 'images\Samsung_Logo.svg.png' , '

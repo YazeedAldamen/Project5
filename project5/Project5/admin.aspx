@@ -37,7 +37,7 @@
             <li class="nav-item active">
                 <a class="nav-link" href="admin.aspx">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>User</span></a>
+                    <span>Users</span></a>
             </li>
 
 
@@ -47,22 +47,7 @@
 
            
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-                    aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Pages</span>
-                </a>
-                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Login Screens:</h6>
-                        <a class="collapse-item" href="login.html">Login</a>
-                        <a class="collapse-item" href="register.html">Register</a>
-                        <div class="collapse-divider"></div>
-                      
-                    </div>
-                </div>
-            </li>
+
 
             <!-- Nav Item - Charts -->
            
@@ -71,21 +56,23 @@
              <li class="nav-item">
                 <a class="nav-link" href="category.aspx">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>  Category</span></a>
+                    <span>  Categories</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="adminProdut.aspx">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>  product</span></a>
+                    <span>  Products</span></a>
             </li>
-
+            <li class="nav-item">
+                <a class="nav-link" href="messeges.aspx">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>  Messeges</span></a>
+            </li>
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
             <!-- Sidebar Toggler (Sidebar) -->
-            <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
-            </div>
+            
 
          
 
@@ -102,25 +89,15 @@
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
                     <!-- Sidebar Toggle (Topbar) -->
-                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                   <%-- <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                         <i class="fa fa-bars"></i>
-                    </button>
+                    </button>--%>
 
-                    <!-- Topbar Search -->
-                    <form
-                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                        <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                                aria-label="Search" aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary" type="button">
-                                    <i class="fas fa-search fa-sm"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+
 
                     <!-- Topbar Navbar -->
+                                        <h2>Users</h2>
+
                     <ul class="navbar-nav ml-auto">
 
                         <!-- Nav Item - Search Dropdown (Visible Only XS) -->
@@ -151,7 +128,7 @@
 
                         <!-- Nav Item - User Information -->
                         <li>
-                            <button class="buttonTop"><a href="Login.aspx" class="nav-link">Log Out</a></button>
+                            <button class="buttonTop"><a href="Login.aspx" class="nav-link" style="width: 71px">Log Out</a></button>
                         </li>
                 <%--        <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"

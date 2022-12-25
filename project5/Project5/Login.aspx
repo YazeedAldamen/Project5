@@ -5,8 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-        <link rel="stylesheet" href="Login.css"/>
-
+    <link href="Login.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -15,7 +14,7 @@
                 <asp:Image ID="Image1" runat="server" src="\images\Mobail Zone Logo.png" />
 
                 <div class="inputbox">
-                    <input id="Email" class="Email" name="Email" value="" placeholder="Email" runat="server"/>
+                    <input id="Email" class="Email" name="Email" value="" placeholder="Email" runat="server" />
                 </div>
 
                 <div class="inputbox">
@@ -24,19 +23,19 @@
 
 
 
-                    
 
-                  <div id="Lable2">
-                <asp:Button ID="Button1" class="Button1" runat="server" Text="Log in" OnClick="Button1_Click" />
-                      
-                      <br />
-                      <br />
-                      <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
 
-            </div>
+                <div id="Lable2">
+                    <asp:Button ID="Button1" class="Button1" runat="server" Text="Log in" OnClick="Button1_Click" />
+
+                    <br />
+                    <br />
+                    <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
+
+                </div>
                 <div class="signup">
-                        <p>Don't have an account?<a href="Registration.aspx">Register here</a></p>
-                    </div>
+                    <p>Don't have an account?<a href="Registration.aspx">Register here</a></p>
+                </div>
             </div>
 
         </div>

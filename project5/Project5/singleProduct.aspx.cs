@@ -39,6 +39,7 @@ namespace Project5
                 {
                     login.Visible = false;
                     register.Visible = false;
+
                 }
 
 
@@ -49,9 +50,10 @@ namespace Project5
 
                 logout.Visible = false;
                 profile.Visible = false;
+                addCommentt.Visible = false;
 
             }
-
+            addComment1();
 
         }
 
@@ -96,6 +98,42 @@ namespace Project5
         {
             Session.Clear();
             Response.Redirect("Login.aspx");
+        }
+        protected void addComment1()
+        {
+            productID = Request.QueryString["pid"];
+            SqlConnection con = new SqlConnection("data source=DESKTOP-EJ4EJ89\\SQLEXPRESS ; database=MobileZone ; integrated security = SSPI");
+            con.Open();
+            string q = $"select comment,firstName ,lastName  from review join users on review.user_id = users.id  where review.product_id = {productID}";
+            SqlCommand com = new SqlCommand(q, con);
+            SqlDataReader sdr = com.ExecuteReader();
+            string table = "<table class = 'table table-striped'>";
+            string comments = "";
+            while (sdr.Read())
+            {
+                table += $"<tr><th>{sdr[1]} {sdr[2]}</th></tr><tr><td>{sdr[0]}</td></tr>";
+            }
+            table += "</table>";
+            commentContainer.Text = table;
+
+        }
+
+        protected void addComment_Click(object sender, EventArgs e)
+        {
+            productID = Request.QueryString["pid"];
+            string userID = Session["userID"].ToString();
+            string comm = comment.Text;
+
+            SqlConnection con = new SqlConnection("data source=DESKTOP-EJ4EJ89\\SQLEXPRESS ; database=MobileZone ; integrated security = SSPI");
+            con.Open();
+            string q = $"insert into review values ({userID} , {productID} , '{comm}')";
+            SqlCommand com = new SqlCommand(q, con);
+
+            com.ExecuteNonQuery();
+
+            addComment1();
+            Response.Redirect($"singleProduct.aspx?pid={productID}");
+
         }
     }
 }

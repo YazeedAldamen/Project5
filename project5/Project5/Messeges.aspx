@@ -1,10 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="adminProdut.aspx.cs" Inherits="Project5.adminProdut" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Messeges.aspx.cs" Inherits="Project5.Messeges" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+  <title></title>
          <script src="https://kit.fontawesome.com/cf9682991b.js" crossorigin="anonymous"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 <!-- JavaScript Bundle with Popper -->
@@ -13,20 +13,6 @@
      <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
-    <style>
-        img {
-          width:50px; 
-        }
-        #Span1{
-            color:red;
-        }
-        #Span2{
-            color:red;
-        }
-        #Span3{
-            color:red;
-        }
-        </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -60,14 +46,12 @@
             <hr class="sidebar-divider">
 
            
-            <!-- Nav Item - Pages Collapse Menu -->
            
 
             <!-- Nav Item - Charts -->
            
 
             <!-- Nav Item - Tables -->
-  
              <li class="nav-item">
                 <a class="nav-link" href="category.aspx">
                     <i class="fas fa-fw fa-table"></i>
@@ -78,7 +62,7 @@
                     <i class="fas fa-fw fa-table"></i>
                     <span>  Products</span></a>
             </li>
-              <li class="nav-item">
+            <li class="nav-item">
                 <a class="nav-link" href="messeges.aspx">
                     <i class="fas fa-fw fa-table"></i>
                     <span>  Messeges</span></a>
@@ -86,7 +70,8 @@
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
-     
+          
+         
 
         </ul>
         <!-- End of Sidebar -->
@@ -100,21 +85,52 @@
                 <!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
-                    <!-- Sidebar Toggle (Topbar) -->
-                    <h2>Products</h2>
+                  
+
+                    <!-- Topbar Search -->
+
+                                        <h2>Messeges</h2>
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
 
-                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-          
+                     
+
                         
 
                         <!-- Nav Item - User Information -->
-                       
-                     <li>
+                        <li>
                             <button class="buttonTop"><a href="Login.aspx" class="nav-link">Log Out</a></button>
                         </li>
+                <%--        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                <img class="img-profile rounded-circle"
+                                    src="img/undraw_profile.svg">
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Profile
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Settings
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Activity Log
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Logout
+                                </a>
+                            </div>
+                        </li>--%>
 
                     </ul>
 
@@ -124,52 +140,13 @@
 
 
                 <div id="users" runat="server">
-                    <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
-
-
-                <div id="add" runat="server">
-                    <h1>Add Product</h1>
-                     <table>
-                         <tr>
-                             <td><label>Product Name  : </label></td>
-                             <td><asp:TextBox ID="productName" runat="server"></asp:TextBox></td>
-                         </tr>
-                         <tr>
-                             <td><label>Product  Descreption : </label></td>
-                             <td><asp:TextBox ID="productDesc" runat="server"></asp:TextBox></td>
-                         </tr>
-                           <tr>
-                             <td><label>Product  Price : </label></td>
-                             <td><asp:TextBox ID="productPrice" runat="server"></asp:TextBox></td>
-                         </tr>
-                            <tr>
-                             <td><label>Product  Category : </label></td>
-                                <td><asp:DropDownList ID="productCat" runat="server"></asp:DropDownList></td>
-                         </tr>
-                         <tr>
-                             <td> <label>Product First Image  : </label> </td>
-                             <td><asp:FileUpload ID="FileUploadImage1" runat="server" /> <span id="Span1" runat="server">please fill this field</span></td> 
-                             
-                         </tr>
-                         <tr>
-                             <td> <label>Product Second Image  : </label> </td>
-                             <td><asp:FileUpload ID="FileUploadImage2" runat="server" /><span id="Span2" runat="server">please fill this field</span></td>
-                             
-                         </tr>
-                         <tr>
-                             <td> <label>Product Third Image  : </label> </td>
-                             <td><asp:FileUpload ID="FileUploadImage3" runat="server" /><span id="Span3" runat="server">please fill this field</span></td>
-                             
-                         </tr>
-                       
-                                   
-                    </table>
-
-                    <asp:Button ID="addProduct" runat="server" Text="Add" OnClick="addProduct_Click" />
-                </div>
-                                    <br />
+                    <asp:Label ID="Label1" runat="server" ></asp:Label>
 
                 </div>
+
+
+
+
 
                 <!-- Begin Page Content -->
                             <!-- Footer -->

@@ -38,7 +38,7 @@
             <li class="nav-item active">
                 <a class="nav-link" href="admin.aspx">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>User</span></a>
+                    <span>Users</span></a>
             </li>
 
 
@@ -58,15 +58,19 @@
              <li class="nav-item">
                 <a class="nav-link" href="category.aspx">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>  Category</span></a>
+                    <span>  Categories</span></a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link" href="adminProdut.aspx">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>  product</span></a>
+                    <span>  Products</span></a>
             </li>
-
+              <li class="nav-item">
+                <a class="nav-link" href="messeges.aspx">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>  Messeges</span></a>
+            </li>
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
@@ -92,6 +96,13 @@
                     <!-- Sidebar Toggle (Topbar) -->
                     <h2>Categories</h2>
 
+
+                                        <ul class="navbar-nav ml-auto">
+
+                     <li>
+                            <button class="buttonTop"><a href="Login.aspx" class="nav-link">Log Out</a></button>
+                        </li>
+                                            </ul>
                     <!-- Topbar Search -->
 
     <%--                <ul class="navbar-nav ml-auto">
@@ -164,7 +175,7 @@
 
 
                 <div id="add" runat="server">
-                    <h1>Add Product</h1>
+                    <h1>Add Category</h1>
                      <table>
                          <tr>
                              <td><label>Category Name  : </label></td>
@@ -188,7 +199,7 @@
 
                     <asp:Button ID="addProduct" runat="server" Text="Add" OnClick="addProduct_Click" />
                 </div>
-
+                    <br />
 
 
 
