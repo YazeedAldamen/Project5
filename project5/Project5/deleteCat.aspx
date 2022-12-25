@@ -1,10 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="adminProdut.aspx.cs" Inherits="Project5.adminProdut" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="deleteCat.aspx.cs" Inherits="Project5.deleteCat" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+   <title></title>
          <script src="https://kit.fontawesome.com/cf9682991b.js" crossorigin="anonymous"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 <!-- JavaScript Bundle with Popper -->
@@ -15,18 +15,9 @@
         rel="stylesheet">
     <style>
         img {
-          width:50px; 
+          width:100px; 
         }
-        #Span1{
-            color:red;
-        }
-        #Span2{
-            color:red;
-        }
-        #Span3{
-            color:red;
-        }
-        </style>
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -82,12 +73,13 @@
            
 
             <!-- Nav Item - Tables -->
-  
+         
              <li class="nav-item">
                 <a class="nav-link" href="category.aspx">
                     <i class="fas fa-fw fa-table"></i>
                     <span>  Category</span></a>
             </li>
+
             <li class="nav-item">
                 <a class="nav-link" href="adminProdut.aspx">
                     <i class="fas fa-fw fa-table"></i>
@@ -200,53 +192,52 @@
                 </nav>
                 <!-- End of Topbar -->
 
-
-
-                <div id="users" runat="server">
-                    <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
-
-                </div>
-
                 <div id="add" runat="server">
-                    <h1>Add Product</h1>
-                     <table>
-                         <tr>
-                             <td><label>Product Name  : </label></td>
-                             <td><asp:TextBox ID="productName" runat="server"></asp:TextBox></td>
-                         </tr>
-                         <tr>
-                             <td><label>Product  Descreption : </label></td>
-                             <td><asp:TextBox ID="productDesc" runat="server"></asp:TextBox></td>
-                         </tr>
-                           <tr>
-                             <td><label>Product  Price : </label></td>
-                             <td><asp:TextBox ID="productPrice" runat="server"></asp:TextBox></td>
-                         </tr>
-                            <tr>
-                             <td><label>Product  Category : </label></td>
-                                <td><asp:DropDownList ID="productCat" runat="server"></asp:DropDownList></td>
-                         </tr>
-                         <tr>
-                             <td> <label>Product First Image  : </label> </td>
-                             <td><asp:FileUpload ID="FileUploadImage1" runat="server" /> <span id="Span1" runat="server">please fill this field</span></td> 
-                             
-                         </tr>
-                         <tr>
-                             <td> <label>Product Second Image  : </label> </td>
-                             <td><asp:FileUpload ID="FileUploadImage2" runat="server" /><span id="Span2" runat="server">please fill this field</span></td>
-                             
-                         </tr>
-                         <tr>
-                             <td> <label>Product Third Image  : </label> </td>
-                             <td><asp:FileUpload ID="FileUploadImage3" runat="server" /><span id="Span3" runat="server">please fill this field</span></td>
-                             
-                         </tr>
-                       
-                                   
+                    <h1>Edit Category</h1>
+                    <table>
+                        <tr>
+                            <td>
+                                <label>Edit Category Name  : </label>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="catName" runat="server"></asp:TextBox></td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Edit Category  Descreption : </label>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="catDesc" runat="server"></asp:TextBox></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Edit Category  Image : </label>
+                            </td>
+
+                            <td>
+
+                                <asp:FileUpload ID="FileUploadImage" runat="server" />
+                                <img src="" runat="server" id="image">
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Edit Category  Logo : </label>
+                            </td>
+                            <td>
+                                <asp:FileUpload ID="FileUploadLogo" runat="server" />
+                                <img src="" runat="server" id="logo">
+                            </td>
+                        </tr>
+
                     </table>
 
-                    <asp:Button ID="addProduct" runat="server" Text="Add" OnClick="addProduct_Click" />
+                    <asp:Button ID="editCat" runat="server" Text="Edit" OnClick="editCat_Click" />
                 </div>
+
+
 
 
 

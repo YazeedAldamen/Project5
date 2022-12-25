@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
+using System.Web.Caching;
+
 namespace Project5
 {
     public partial class sth : System.Web.UI.Page
@@ -12,6 +14,11 @@ namespace Project5
         protected void Page_Load(object sender, EventArgs e)
         {
             string catID = Request.QueryString["catID"];
+            if(catID == null)
+            {
+                Response.Redirect("Home.aspx");
+            }
+
             SqlConnection con = new SqlConnection("data source=DESKTOP-EJ4EJ89\\SQLEXPRESS ; database=MobileZone ; integrated security = SSPI");
             con.Open();
             SqlCommand getCatCom = new SqlCommand($"select * from category where category_id = {int.Parse(catID)} ", con);

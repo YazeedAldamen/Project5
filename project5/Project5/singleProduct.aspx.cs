@@ -15,8 +15,13 @@ namespace Project5
         string productID;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack) { 
-            productID = Request.QueryString["pid"];
+            
+            if (!IsPostBack) {
+                if (Request.QueryString["pid"] == null)
+                {
+                    Response.Redirect("Home.aspx");
+                }
+                productID = Request.QueryString["pid"];
             SqlConnection con = new SqlConnection("data source=DESKTOP-EJ4EJ89\\SQLEXPRESS ; database=MobileZone ; integrated security = SSPI");
             con.Open();
             SqlCommand com = new SqlCommand($"select * from Product where product_id={productID}", con);

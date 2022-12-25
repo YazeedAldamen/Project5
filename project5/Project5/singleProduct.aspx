@@ -109,15 +109,15 @@
         SqlDataReader sdr = com.ExecuteReader();
         sdr.Read();
 
-
         %>
+
        
     <div class="container">
         <div class="single-product">
             <div class="row">
                 <div class="col-5">
                     <div class="product-image">
-                        <div class="product-image-main">
+                        <div class="product-image-main" style="background-color:white;">
                             <img src="<%=sdr[3]%>" alt="" id="product-main-image"/>
                         </div>
                         <div class="product-image-slider">
@@ -134,6 +134,7 @@
                         <span><a href="sth.aspx?catID=<%= sdr[7] %>">Product</a></span>
                         <span class="active">Phone</span>
                     </div>
+        
 
                     <div class="product">
                         <div class="product-title">
@@ -182,7 +183,7 @@
                         <div class="product-btn-group">
                             
                             <asp:Button CssClass="button add-cart" ID="Button1" runat="server" Text="Add to Cart" OnClick="Button1_Click" />
-                            <button class="button add-cart"><a href="cart.aspx" style="text-decoration:none; color:black;">Continue Shopping</a></button>
+                            <button class="button add-cart"><a href="Home.aspx" style="text-decoration:none; color:black;">Continue Shopping</a></button>
 <%--                            <asp:Label ID="Label1" runat="server" Text="Your Items Have been added to your cart"></asp:Label>--%>
                         </div>
                     </div>

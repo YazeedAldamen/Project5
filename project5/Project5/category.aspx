@@ -13,6 +13,7 @@
      <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -47,22 +48,7 @@
 
            
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-                    aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Pages</span>
-                </a>
-                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Login Screens:</h6>
-                        <a class="collapse-item" href="login.html">Login</a>
-                        <a class="collapse-item" href="register.html">Register</a>
-                        <div class="collapse-divider"></div>
-                      
-                    </div>
-                </div>
-            </li>
+
 
             <!-- Nav Item - Charts -->
            
@@ -84,10 +70,10 @@
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
-            <!-- Sidebar Toggler (Sidebar) -->
+       <%--     <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
-            </div>
+            </div>--%>
 
          
 
@@ -104,26 +90,11 @@
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
                     <!-- Sidebar Toggle (Topbar) -->
-                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                        <i class="fa fa-bars"></i>
-                    </button>
+                    <h2>Products</h2>
 
                     <!-- Topbar Search -->
-                    <form
-                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                        <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                                aria-label="Search" aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary" type="button">
-                                    <i class="fas fa-search fa-sm"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
 
-                    <!-- Topbar Navbar -->
-                    <ul class="navbar-nav ml-auto">
+    <%--                <ul class="navbar-nav ml-auto">
 
                         <!-- Nav Item - Search Dropdown (Visible Only XS) -->
                         <li class="nav-item dropdown no-arrow d-sm-none">
@@ -182,20 +153,40 @@
                             </div>
                         </li>
 
-                    </ul>
+                    </ul>--%>
 
                 </nav>
                 <!-- End of Topbar -->
 
-                <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" />
 
                 <div id="users" runat="server">
-                    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                    <asp:Label ID="Label1" runat="server" ></asp:Label>
 
-                </div>
 
                 <div id="add" runat="server">
-                    
+                    <h1>Add Product</h1>
+                     <table>
+                         <tr>
+                             <td><label>Category Name  : </label></td>
+                             <td><asp:TextBox ID="catName" runat="server"></asp:TextBox></td>
+                         </tr>
+                         <tr>
+                             <td><label>Category  Descreption : </label></td>
+                             <td><asp:TextBox ID="catDesc" runat="server"></asp:TextBox></td>
+                         </tr>
+                         <tr>
+                             <td> <label>Category  Image : </label> </td>
+                             <td><asp:FileUpload ID="FileUploadImage" runat="server" /></td>
+
+                         </tr>
+                         <tr>
+                             <td><label>Category  Logo : </label></td>
+                             <td> <asp:FileUpload ID="FileUploadLogo" runat="server" /></td>
+                         </tr>
+
+                    </table>
+
+                    <asp:Button ID="addProduct" runat="server" Text="Add" OnClick="addProduct_Click" />
                 </div>
 
 
@@ -204,13 +195,7 @@
 
                 <!-- Begin Page Content -->
                             <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2021</span>
-                    </div>
-                </div>
-            </footer>
+
             <!-- End of Footer -->
 
         </div>
@@ -262,5 +247,12 @@
     <script src="js/demo/chart-pie-demo.js"></script>
 
     </form>
+                <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Your Website 2021</span>
+                    </div>
+                </div>
+            </footer>
 </body>
 </html>

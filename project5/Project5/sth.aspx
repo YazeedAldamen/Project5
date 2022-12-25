@@ -147,11 +147,11 @@
                       </div>--%>
 
                 <div class="card" style="width: 18rem;">
-                    <img src="src="<%=drProduct[3]%>"" class="card-img-top" alt="..."/>
+                    <img src="<%=drProduct[3]%>"" class="card-img-top" alt="..."/>
                     <div class="card-body">
-                        <h5 class="card-title"><%=drProduct[1]%></h5>
-                        <p class="card-text"><%=drProduct[1]%></p>
-                        <a href="singleProduct.aspx?pid=<%=drProduct[0]%>" class="btn btn-primary">Go somewhere</a>
+                        <h5 class="card-title" style="font-weight:bold; color:black;"><%=drProduct[1]%></h5>
+<%--                        <p class="card-text"><%=drProduct[2]%></p>--%>
+                        <a href="singleProduct.aspx?pid=<%=drProduct[0]%>" class="btn btn-primary">Show</a>
                     </div>
                 </div>
 

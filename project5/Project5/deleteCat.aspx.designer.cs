@@ -11,7 +11,7 @@ namespace Project5
 {
 
 
-    public partial class category
+    public partial class deleteCat
     {
 
         /// <summary>
@@ -22,24 +22,6 @@ namespace Project5
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-
-        /// <summary>
-        /// users control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl users;
-
-        /// <summary>
-        /// Label1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
         /// add control.
@@ -78,6 +60,15 @@ namespace Project5
         protected global::System.Web.UI.WebControls.FileUpload FileUploadImage;
 
         /// <summary>
+        /// image control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlImage image;
+
+        /// <summary>
         /// FileUploadLogo control.
         /// </summary>
         /// <remarks>
@@ -87,12 +78,21 @@ namespace Project5
         protected global::System.Web.UI.WebControls.FileUpload FileUploadLogo;
 
         /// <summary>
-        /// addProduct control.
+        /// logo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button addProduct;
+        protected global::System.Web.UI.HtmlControls.HtmlImage logo;
+
+        /// <summary>
+        /// editCat control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button editCat;
     }
 }

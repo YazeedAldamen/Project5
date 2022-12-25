@@ -14,7 +14,15 @@ namespace Project5
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            try
+            {
+                if (Session["userid"].ToString() != null) { }
 
+            }
+            catch (Exception)
+            {
+                Response.Redirect("Login.aspx");
+            }
             string userid = Request.QueryString["userid"];
             Response.Write(userid);
 
