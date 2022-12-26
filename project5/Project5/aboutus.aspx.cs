@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
 
 namespace Project5
 {
@@ -27,6 +28,7 @@ namespace Project5
 
                 logout.Visible = false;
                 profile.Visible = false;
+                cart.Visible = false;
 
 
             }

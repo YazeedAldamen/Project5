@@ -50,6 +50,7 @@ namespace Project5
 
                 logout.Visible = false;
                 profile.Visible = false;
+                cart.Visible = false;
                 addCommentt.Visible = false;
 
             }

@@ -36,13 +36,13 @@
 
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link  p-lg-3" aria-current="page" href="#">Home</a>
+                        <a class="nav-link  p-lg-3" aria-current="page" href="Home.aspx">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link  p-lg-3" aria-current="page" href="#">AboutUs</a>
+                        <a class="nav-link  p-lg-3" aria-current="page" href="aboutus.aspx">AboutUs</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link  p-lg-3 " href="#">ContactUs</a>
+                        <a class="nav-link  p-lg-3 " href="contactUs.aspx">ContactUs</a>
                     </li>
                   
                     <li class="nav-item" id="profile" runat="server" >
@@ -78,16 +78,16 @@
                         <div class="d-flex align-items-center mt-ms-5" id="logout" runat="server"><asp:Button ID="logoutBtn"  runat="server" Text="Log Out" CssClass="buttonTop" OnClick="logoutBtn_Click"/></div>
                     </li>
                     <li class="nav-item">
-                        <div class="d-flex align-items-center mt-ms-5" id="login" runat="server"><button class="buttonTop"><a href="Login.aspx">Log In</a></button></div>
+                        <div class="d-flex align-items-center mt-ms-5" id="login" runat="server"><button class="buttonTop"><a href="Login.aspx" style="text-decoration:none;">Log In</a></button></div>
                     </li>
                     <li class="nav-item">
-                        <div class="d-flex align-items-center mt-ms-5" id="register" runat="server"><button class="buttonTop"><a href="Registration.aspx">Register</a></button></div>
+                        <div class="d-flex align-items-center mt-ms-5" id="register" runat="server"><button class="buttonTop"><a href="Registration.aspx" style="text-decoration:none;">Register</a></button></div>
                     </li>
                   <%--  <li class="nav-item">
                         <div class="d-flex align-items-center"><button class="buttonTop">Sign Up</button></div>
                     </li>--%>
 
-                    <li class="nav-item">
+                    <li class="nav-item" id="cart" runat="server">
                         <a href="cart.aspx" >
                             <i class="fa-solid fa-cart-shopping" id="cart"></i>
                         </a>

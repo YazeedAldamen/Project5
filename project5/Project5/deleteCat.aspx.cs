@@ -35,7 +35,7 @@ namespace Project5
                         deleteCategory();
                         Response.Redirect("category.aspx");
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
 
                         Response.Redirect("category.aspx");

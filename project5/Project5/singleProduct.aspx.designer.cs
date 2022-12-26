@@ -69,6 +69,15 @@ namespace Project5
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl register;
 
         /// <summary>
+        /// cart control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl cart;
+
+        /// <summary>
         /// productTitle control.
         /// </summary>
         /// <remarks>
@@ -85,6 +94,15 @@ namespace Project5
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl price;
+
+        /// <summary>
+        /// discount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl discount;
 
         /// <summary>
         /// description control.

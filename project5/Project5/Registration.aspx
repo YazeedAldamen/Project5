@@ -28,7 +28,7 @@
             </div>
             <div class="information">
                <div class="registratiom">
-                <asp:Image ID="Image2" runat="server" src="\images\Mobail Zone Logo.png"/>
+                   <a href="Home.aspx"><asp:Image ID="Image2" runat="server" src="\images\Mobail Zone Logo.png"/></a>
 
                <div class="inputbox">
                     <input id="FirstName" class="firstname" name="firstname" value="" placeholder="First Name" runat="server" required="required"/>

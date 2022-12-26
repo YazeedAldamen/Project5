@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -6,6 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
 
 namespace Project5
 {
@@ -13,7 +15,23 @@ namespace Project5
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-     
+            try
+            {
+                if (Session["userID"].ToString() != null)
+                {
+                   
+                }
+
+
+
+            }
+            catch (Exception)
+            {
+
+                
+                Response.Redirect("Login.aspx");
+
+            }
         }
 
         protected void chekout_Click(object sender, EventArgs e)
@@ -80,10 +98,10 @@ namespace Project5
             SqlDataReader sdr2 = com2.ExecuteReader();
 
             string insertquery = "insert into Order_Details(order_id,product_id,product_quantity,total_price) values ";
-            int c = 0;
+            int c = 1;
             while (sdr2.Read())
             {
-                insertquery += $"({orderIDs[c]} , {sdr2[1]} , {sdr2[2]} , {sdr2[4]}),";
+                insertquery += $"({orderIDs[c]} , {sdr2[1]} , {sdr2[2]} , {sdr2[3]}),";
                 c++;
             }
             con.Close();

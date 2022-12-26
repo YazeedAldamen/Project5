@@ -96,7 +96,7 @@
                         <div class="d-flex align-items-center"><button class="buttonTop">Sign Up</button></div>
                     </li>--%>
 
-                    <li class="nav-item">
+                    <li class="nav-item"  id="cart" runat="server">
                         <a href="cart.aspx" >
                             <i class="fa-solid fa-cart-shopping" id="cart"></i>
                         </a>
@@ -108,13 +108,17 @@
         </div>
     </nav>
        <%
-        string id = Request.QueryString["pid"];
-        SqlConnection con = new SqlConnection("data source=DESKTOP-EJ4EJ89\\SQLEXPRESS ; database=MobileZone ; integrated security = SSPI");
-        con.Open();
-        SqlCommand com = new SqlCommand($"select * from Product where product_id={id}", con);
-        SqlDataReader sdr = com.ExecuteReader();
-        sdr.Read();
-
+           string id = Request.QueryString["pid"];
+           SqlConnection con = new SqlConnection("data source=DESKTOP-EJ4EJ89\\SQLEXPRESS ; database=MobileZone ; integrated security = SSPI");
+           con.Open();
+           SqlCommand com = new SqlCommand($"select * from Product where product_id={id}", con);
+           SqlDataReader sdr = com.ExecuteReader();
+         
+           sdr.Read();
+             if (sdr[7].ToString() == "16")
+           {
+               discount.Visible = true;
+           }
         %>
 
        
@@ -155,7 +159,7 @@
                             <span class="review">(47 Review)</span>
                         </div>
                         <div class="product-price">
-                            <span class="offer-price" id="price" runat="server">$</span>
+                            <span class="offer-price" id="price" runat="server">$</span>&nbsp;&nbsp;<span id="discount" runat="server" visible="false" style="font-weight:bold;">50% OFF</span>
                         </div>
 
                         <div class="product-details">

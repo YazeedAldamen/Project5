@@ -27,21 +27,28 @@
     </style>
 </head>
 <body style="font-family: 'Open Sans', sans-serif;">
+    <form id="form" runat="server">
+
+
+
+
+
 
     <div class="container">
         <div class="centered title">
-            <h1>Welcome to our checkout.</h1>
+            <h1>Checkout.</h1>
         </div>
     </div>
-    <hr class="featurette-divider"></hr>
     <div class="container">
         <div class="row">
             <div class="col- 6 col-xs-12">
                 <div class="tab-content">
                     <div id="stripe" class="tab-pane fade in active">
                         <script src='https://js.stripe.com/v2/' type='text/javascript'></script>
-                        <form id="form" runat="server">
+                        
                             <br>
+                            <h1>Cash</h1>
+                            <br />
                             <div class='form-row'>
                                 <div class='form-group required'>
                                     <div class='error form-group hide'>
@@ -63,7 +70,7 @@
                             </div>
                             <div class='form-row'>
                                 <div class='form-group card required'>
-                                    <label class='control-label'>Billing Address</label>
+                                    <label class='control-label'>Address</label>
                                     <input autocomplete='off' required class='form-control' size='20' type='text'>
                                 </div>
                             </div>
@@ -91,8 +98,9 @@
                 </div>
             </div>
             <div class="col-5 col-xs-12">
-
-
+                <br />
+                <h1>Online Payment</h1>
+                <br />
                 <div id="smart-button-container">
                     <div style="text-align: center;">
                         <div id="paypal-button-container">

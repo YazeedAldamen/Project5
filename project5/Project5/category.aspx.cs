@@ -14,6 +14,16 @@ namespace Project5
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            //string success = Request.QueryString["success"];
+            //if (success == "1")
+            //{
+            //    Response.Write("<script>alert('Deleted Successfully')</script>");
+            //}
+            //else if (success == "0")
+            //{
+            //    Response.Write("<script>alert('Cannot Delete This Category')</script>");
+
+            //}
             try
             {
                 if (Session["userid"].ToString() != null) { }
@@ -30,12 +40,12 @@ namespace Project5
 
             connect.Open();
             SqlDataReader sdr = comand.ExecuteReader();
-
+            int count = 1;
             while (sdr.Read())
             {
-                table += $"<tr><td>{sdr[0]}</td><td>{sdr[1]}</td><td><img src='{sdr[2]}' style='width:160px; height:100px'></td><td>{sdr[3]}</td> <td><a href='deleteCat.aspx?catID={sdr[0]}&type=delete'><i class=\"fa-solid fa-trash-can\" style='color:red;'></i></a></td> <td><a href='deleteCat.aspx?catID={sdr[0]}&type=edit'><i class=\"fa-regular fa-pen-to-square\"></i></a></td> </tr>\" ";
+                table += $"<tr><td>{count}</td><td>{sdr[1]}</td><td><img src='{sdr[2]}' style='width:160px; height:100px'></td><td>{sdr[3]}</td> <td><a href='deleteCat.aspx?catID={sdr[0]}&type=delete'><i class=\"fa-solid fa-trash-can\" style='color:red;'></i></a></td> <td><a href='deleteCat.aspx?catID={sdr[0]}&type=edit'><i class=\"fa-regular fa-pen-to-square\"></i></a></td> </tr>\" ";
 
-                
+                count++;
             }
             table += "</table>";
             Label label = new Label();

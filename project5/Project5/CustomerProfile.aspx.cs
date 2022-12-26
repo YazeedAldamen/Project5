@@ -28,9 +28,9 @@ namespace Project5
             }
             catch (Exception)
             {
-
                 logout.Visible = false;
                 profile.Visible = false;
+                cart.Visible = false;
                 Response.Redirect("Login.aspx");
 
             }

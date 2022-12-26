@@ -41,13 +41,13 @@
 
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link  p-lg-3" aria-current="page" href="#">Home</a>
+                        <a class="nav-link  p-lg-3" aria-current="page" href="Home.aspx">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link  p-lg-3" aria-current="page" href="#">AboutUs</a>
+                        <a class="nav-link  p-lg-3" aria-current="page" href="aboutus.aspx">AboutUs</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link  p-lg-3 " href="#">ContactUs</a>
+                        <a class="nav-link  p-lg-3 " href="contactUs.aspx">ContactUs</a>
                     </li>
                   
                     <li class="nav-item" id="profile" runat="server" >
@@ -92,7 +92,7 @@
                         <div class="d-flex align-items-center"><button class="buttonTop">Sign Up</button></div>
                     </li>--%>
 
-                    <li class="nav-item">
+                    <li class="nav-item" id="cart" runat="server">
                         <a href="cart.aspx" >
                             <i class="fa-solid fa-cart-shopping" id="cart"></i>
                         </a>
@@ -136,8 +136,8 @@
                 <asp:Label ID="Label3" Class="labels" runat="server" Text="Email Adress"></asp:Label> <br />
                <asp:TextBox ID="TextBox1" class="inputtext" runat="server" required></asp:TextBox><br /> <br /><br />
 
-                 <asp:Label ID="Label4" Class="labels" runat="server" Text="Comments / Questions"></asp:Label> <br />
-               <textarea id="TextArea1" runat="server" class="textaria" cols="20" rows="2" required></textarea> <br /> <br /> <br /> 
+                 <asp:Label ID="Label4" Class="labels" runat="server" Text="Messeges / Questions"></asp:Label> <br />
+               <textarea id="TextArea1" runat="server" class="textaria" cols="30" rows="2" required></textarea> <br /> <br /> <br /> 
 
 
                <asp:Button ID="Button1" runat="server" Class="send" Text="Send" OnClick="Button1_Click" />

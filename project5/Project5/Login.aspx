@@ -11,7 +11,7 @@
     <form id="form1" runat="server">
         <div id="information">
             <div id="login">
-                <asp:Image ID="Image1" runat="server" src="\images\Mobail Zone Logo.png" />
+                <a href="Home.aspx"><asp:Image ID="Image1" runat="server" src="\images\Mobail Zone Logo.png" /></a>
 
                 <div class="inputbox">
                     <input id="Email" class="Email" name="Email" value="" placeholder="Email" runat="server" />

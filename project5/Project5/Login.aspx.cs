@@ -29,7 +29,7 @@ namespace Project5
             
             while (sdr.Read())
             {
-                if (Email.Value == "haitham@gmail.com" && Password1.Value == "9")
+                if (Email.Value == "haitham@gmail.com" && Password1.Value == "123456789")
                 {
                     Session["userid"] = sdr[2];
                     Response.Redirect("Admin.aspx");

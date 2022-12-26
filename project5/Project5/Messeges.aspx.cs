@@ -27,7 +27,6 @@ namespace Project5
 
             connect.Open();
             SqlDataReader sdr = comand.ExecuteReader();
-            sdr.Read();
             int count = 1;
             while (sdr.Read())
             {

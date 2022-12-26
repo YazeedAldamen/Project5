@@ -78,14 +78,16 @@
                         </a>
                         <ul class="dropdown-menu">
                                         <%
-             SqlConnection conn = new SqlConnection("data source=DESKTOP-EJ4EJ89\\SQLEXPRESS ; database=MobileZone ; integrated security = SSPI");
-             conn.Open();
-             SqlCommand comm = new SqlCommand($"select * from category", conn);
-             SqlDataReader sdrr = comm.ExecuteReader();
-             while (sdrr.Read())
-             {
+                                            SqlConnection conn = new SqlConnection("data source=DESKTOP-EJ4EJ89\\SQLEXPRESS ; database=MobileZone ; integrated security = SSPI");
+                                            conn.Open();
+                                            SqlCommand comm = new SqlCommand($"select * from category", conn);
+                                            SqlDataReader sdrr = comm.ExecuteReader();
+                                            while (sdrr.Read())
+                                            {
+                                             
+                                                
             %>
-    
+                
                             <li><a class="dropdown-item" href="sth.aspx?catID=<%=sdrr[0]%>" ><%=sdrr[1]%></a></li>
         
             <%
@@ -110,7 +112,7 @@
                         <div class="d-flex align-items-center"><button class="buttonTop">Sign Up</button></div>
                     </li>--%>
 
-                    <li class="nav-item">
+                    <li class="nav-item" id="cart" runat="server">
                         <a href="cart.aspx" >
                             <i class="fa-solid fa-cart-shopping" id="cart"></i>
                         </a>
@@ -262,6 +264,10 @@
                 SqlDataReader sdr = com.ExecuteReader();
                 while (sdr.Read())
                 {
+                       if (sdr[1].ToString() == "Discount")
+                                                {
+                                                    continue;
+                                                }
             %>
             <div class="col-sm-12 col-md-6 col-lg-4">
                 <div class="box" id="samsung">
@@ -310,7 +316,7 @@
     <div class="container-fluid mt-5 ">
         <div class="row">
             <div class="col-12 mt-" class="ads">
-                <a href="">   <img width="100%" src="img/ads.png" alt=""> </a>
+                <a href="sth.aspx?catID=16"><img width="100%" src="img/ads.png" alt=""> </a>
             </div>
         </div>
     </div>
@@ -318,7 +324,7 @@
     <!-- ADS END -->
 
     <!-- Card proudact  start -->
-    <div class="row  text-center pt-5 pb-2 display-6 "><p class="text-primary">BestSeller</p></div>
+    <div class="row  text-center pt-5 pb-2 display-6 "><p class="text-primary">BestSellers</p></div>
     <div class="container-fluid bg-trasparent my-4 p-3" style="position: relative">
         <div class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3">
             <div class="col hp">
@@ -342,7 +348,7 @@
 
                         <div class="d-grid gap-2 my-4">
 
-                            <a href="#" class="btn btn-warning bold-btn">add to cart</a>
+                            <a href="sth.aspx?catID=2" class="btn btn-warning bold-btn">Find More</a>
 
                         </div>
                         <div class="clearfix mb-1">
@@ -381,7 +387,7 @@
 
                         <div class="d-grid gap-2 my-4">
 
-                            <a href="#" class="btn btn-warning bold-btn">add to cart</a>
+                            <a href="sth.aspx?catID=1" class="btn btn-warning bold-btn">Find More</a>
 
                         </div>
                         <div class="clearfix mb-1">
@@ -417,7 +423,7 @@
 
                         <div class="d-grid gap-2 my-4">
 
-                            <a href="#" class="btn btn-warning bold-btn">add to cart</a>
+                            <a href="sth.aspx?catID=3" class="btn btn-warning bold-btn">Find More</a>
 
                         </div>
                         <div class="clearfix mb-1">
@@ -455,7 +461,7 @@
 
                         <div class="d-grid gap-2 my-4">
 
-                            <a href="#" class="btn btn-warning bold-btn">add to cart</a>
+                            <a href="sth.aspx?catID=6" class="btn btn-warning bold-btn">Find More</a>
 
                         </div>
                         <div class="clearfix mb-1">

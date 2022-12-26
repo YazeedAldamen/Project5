@@ -28,6 +28,7 @@ namespace Project5
 
                 logout.Visible = false;
                 profile.Visible = false;
+                cart.Visible = false;
 
             }
         }
@@ -35,7 +36,7 @@ namespace Project5
         protected void Button1_Click(object sender, EventArgs e)
         {
             SqlConnection conn = new SqlConnection("data source=DESKTOP-EJ4EJ89\\SQLEXPRESS ; database=MobileZone ; integrated security=SSPI");
-            SqlCommand com = new SqlCommand($"insert into contactinfo (firstname , lastname, email , comment) values ('{TextBox3.Text}','{TextBox2.Text}','{TextBox1.Text}','{TextArea1.Value}')", conn);
+            SqlCommand com = new SqlCommand($"insert into contactinfo (firstname , lastname, email , messege) values ('{TextBox3.Text}','{TextBox2.Text}','{TextBox1.Text}','{TextArea1.Value}')", conn);
 
             conn.Open();
             com.ExecuteNonQuery();

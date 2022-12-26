@@ -98,7 +98,7 @@
                         <div class="d-flex align-items-center"><button class="buttonTop">Sign Up</button></div>
                     </li>--%>
 
-                        <li class="nav-item">
+                        <li class="nav-item"  id="cart" runat="server">
                             <a href="cart.aspx">
                                 <i class="fa-solid fa-cart-shopping" id="cart"></i>
                             </a>

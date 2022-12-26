@@ -89,7 +89,7 @@
                         <div class="d-flex align-items-center"><button class="buttonTop">Sign Up</button></div>
                     </li>--%>
 
-                    <li class="nav-item">
+                    <li class="nav-item"  id="cart" runat="server">
                         <a href="cart.aspx" >
                             <i class="fa-solid fa-cart-shopping" id="cart"></i>
                         </a>
@@ -115,7 +115,7 @@
                     %>
 
                       <h2 ID="cat_name" > <%=drCat[1]%> </h2>
-                      <img src="<%=drCat[4]%>"" id="cat_image" style="height:150px; width:400px"/>
+                      <img src="<%=drCat[4]%>"" id="cat_image" style="height:200px; width:450px"/>
                       <p><%=drCat[3]%></p>
 
                 
@@ -136,6 +136,10 @@
                     SqlDataReader drProduct = getProductCom.ExecuteReader();
                     while (drProduct.Read())
                     {
+                        if (drProduct[7].ToString() == "16")
+           {
+               discount.Visible = true;
+           }
                     %>
 
                      <%-- <div class="card">
@@ -149,8 +153,12 @@
                 <div class="card" style="width: 18rem;">
                     <img src="<%=drProduct[3]%>"" class="card-img-top" alt="..."/>
                     <div class="card-body">
-                        <h5 class="card-title" style="font-weight:bold; color:black;"><%=drProduct[1]%></h5>
-<%--                        <p class="card-text"><%=drProduct[2]%></p>--%>
+                        <span class="card-title" style="font-weight:bold; color:black;"><%=drProduct[1]%></span>
+                        <br />
+                        <br />
+                        <span class="card-title" style="font-weight:bold; color:black;">$<%=drProduct[6]%></span>&nbsp;&nbsp;<span id="discount" runat="server" visible="false" style="font-weight:bold;">50% OFF</span>
+                        <br />
+                        <br />
                         <a href="singleProduct.aspx?pid=<%=drProduct[0]%>" class="btn btn-primary">Show</a>
                     </div>
                 </div>
