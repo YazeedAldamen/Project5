@@ -32,17 +32,16 @@ namespace Project5
             }
             connection.Close();
             connection.Open();
-
+            
             if (q != true)
             {
-                SqlCommand command = new SqlCommand($"insert into Users values(@firstname,@lastname,@email,@password,@phone)", connection);
+                SqlCommand command = new SqlCommand($"insert into Users values(@firstname,@lastname,@email,@password,@phone,'user')", connection);
                 //connection.Open();
                 command.Parameters.AddWithValue("@firstname", FirstName.Value);
                 command.Parameters.AddWithValue("@lastname", LastName.Value);
                 command.Parameters.AddWithValue("@email", Email.Value);
                 command.Parameters.AddWithValue("@password", Password1.Value);
-                command.Parameters.AddWithValue("@phone", PhoneNumber.Value);
-
+                command.Parameters.AddWithValue("@phone", int.Parse(PhoneNumber.Value));
                 command.ExecuteNonQuery();
                 Response.Redirect("Login.aspx");
             }

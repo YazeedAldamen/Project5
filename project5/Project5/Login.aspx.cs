@@ -23,23 +23,25 @@ namespace Project5
         protected void Button1_Click(object sender, EventArgs e)
         {
             SqlConnection connection = new SqlConnection("data source = DESKTOP-EJ4EJ89\\SQLEXPRESS; database=MobileZone;integrated security=SSPI");
-            SqlCommand command = new SqlCommand("select email,password,id from Users ", connection);
+            SqlCommand command = new SqlCommand("select email,password,id,role from Users ", connection);
             connection.Open();
             SqlDataReader sdr = command.ExecuteReader();
             
             while (sdr.Read())
             {
-                if (Email.Value == "haitham@gmail.com" && Password1.Value == "123456789")
+                if (Email.Value == sdr[0].ToString() && Password1.Value == sdr[1].ToString() && sdr[3].ToString()=="admin")
                 {
                     Session["userid"] = sdr[2];
+                    Session["role"]= sdr[3];
                     Response.Redirect("Admin.aspx");
 
                     break;
                 }
 
-                if (Email.Value == sdr[0].ToString() && Password1.Value == sdr[1].ToString())
+                if (Email.Value == sdr[0].ToString() && Password1.Value == sdr[1].ToString() && sdr[3].ToString()=="user")
                 {
                     Session["userid"] = sdr[2];
+                    Session["role"] = sdr[3];
                     Response.Redirect("Home.aspx");
                     break;
 

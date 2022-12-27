@@ -43,6 +43,9 @@
                         <img  aria-current="page" style="width:15%;" src="img/Mobail Zone Logo.png" alt="">
 
                     </li>
+                <%--    <li class="nav-item" id="dash" runat="server" visible="false">
+                        <a class="nav-link  p-lg-3" aria-current="page" href="admin.aspx">Dashboard</a>
+                    </li>--%>
                      <li class="nav-item">
                         <a class="nav-link  p-lg-3" aria-current="page" href="Home.aspx">Home</a>
                     </li>

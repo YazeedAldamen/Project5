@@ -11,12 +11,25 @@ namespace Project5
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
+
+
             try
             {
-                if (Session["userID"].ToString() != null) {
+                logout.Visible= false;
+                if (Session["userID"] != null)
+                {
+                    logout.Visible = true;
                     login.Visible = false;
                     register.Visible = false;
+                    cart.Visible = true;
+                    if (Session["role"].ToString() == "admin")
+                    {
+                        dash.Visible = true;
+                    }
+
                 }
+
 
 
 
@@ -28,7 +41,6 @@ namespace Project5
                 profile.Visible = false;
                 cart.Visible = false;
             }
-
 
 
 

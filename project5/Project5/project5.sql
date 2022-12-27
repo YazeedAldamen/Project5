@@ -7,6 +7,8 @@
 --phoneNumber int,
 --);
 
+alter table users add role varchar(50) default 'user';
+
 delete from Product where product_description=2;
 
 select * from Users;

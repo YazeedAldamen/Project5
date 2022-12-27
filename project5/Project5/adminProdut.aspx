@@ -83,6 +83,11 @@
                     <i class="fas fa-fw fa-table"></i>
                     <span>  Messeges</span></a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Home.aspx">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>  Home</span></a>
+            </li>
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 

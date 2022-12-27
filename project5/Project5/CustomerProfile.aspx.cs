@@ -21,6 +21,10 @@ namespace Project5
                 {
                     login.Visible = false;
                     register.Visible = false;
+                    //if (Session["role"].ToString() == "admin")
+                    //{
+                    //    dash.Visible = true;
+                    //}
                 }
 
 

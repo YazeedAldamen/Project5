@@ -39,6 +39,7 @@ namespace Project5
                 {
                     login.Visible = false;
                     register.Visible = false;
+              
 
                 }
 
