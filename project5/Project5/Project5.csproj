@@ -73,6 +73,7 @@
     <Content Include="admin.css" />
     <Content Include="adminProdut.aspx" />
     <Content Include="category.aspx" />
+    <Content Include="changeQuantity.aspx" />
     <Content Include="checkOut.aspx" />
     <Content Include="contact.css" />
     <Content Include="contactUs.aspx" />
@@ -155,6 +156,13 @@
     </Compile>
     <Compile Include="category.aspx.designer.cs">
       <DependentUpon>category.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="changeQuantity.aspx.cs">
+      <DependentUpon>changeQuantity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="changeQuantity.aspx.designer.cs">
+      <DependentUpon>changeQuantity.aspx</DependentUpon>
     </Compile>
     <Compile Include="checkOut.aspx.cs">
       <DependentUpon>checkOut.aspx</DependentUpon>

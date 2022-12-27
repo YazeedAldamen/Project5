@@ -10,6 +10,9 @@
           display:flex;
           justify-content:space-between;
         }
+        body{
+            background-color: #f15513;
+        }
     </style>
      <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,8 +32,8 @@
         @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@100;700&display=swap');
     </style>
 </head>
-<body>
-    <form id="form" runat="server">
+<body >
+    <form id="form" runat="server" >
         <nav class="navbar navbar-expand-lg sticky-top ">
         <div class="container-fluid">
 
@@ -112,7 +115,7 @@
         </div>
     </nav>
 
-   <section class="vh-100" style="background-color: #fdccbc;">
+   <section class="vh-100" >
   <div class="container h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col">
@@ -150,8 +153,9 @@
               <div class="col-md-2 d-flex justify-content-center">
                 <div>
                   <p class="small text-muted mb-4 pb-2">Quantity</p>
-                  <p class="lead fw-normal mb-0"><%=dr[2]%></p>
-                   
+                   <a href="changeQuantity.aspx?id=<%=dr[7]%>&quantity=<%=dr[2] %>&operator=minus&price=<%=dr[3]%>">-</a>
+                    <p class="lead fw-normal mb-0"><%=dr[2]%></p>
+                    <a href="changeQuantity.aspx?id=<%=dr[7]%>&quantity=<%=dr[2] %>&operator=plus&price=<%=dr[3]%>">+</a>
                 </div>
               </div>
               <div class="col-md-2 d-flex justify-content-center">
